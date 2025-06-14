@@ -45,3 +45,7 @@
 
 
  bpm_gui_sidebar_icon_desc: "Crises"
+
+ bpm_underperforming_economy: "Underperforming Economy"
+ bpm_war_economy: "War Economy"
+ bpm_gave_primacy_of_goods_to_the_military: "Concessions to the Military"

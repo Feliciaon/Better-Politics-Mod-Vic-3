@@ -1,0 +1,40 @@
+je_bpm_war_economy_rationing_implementation = {
+	name = "je_bpm_war_economy_rationing_implementation"
+	desc = "je_bpm_war_economy_rationing_implementation_desc"
+
+	#visible = { has_variable = je_bpm_russia_estates_peasants_exists }
+
+	possible = {
+		NOT = { has_law = law_type:law_disarmed_nation }
+		NOT = { has_law = law_type:law_dove_politics }
+		NOT = { has_law = law_type:law_industry_banned }
+		any_country = {
+			country_rank >= rank_value:great_power
+			has_war_with = ROOT
+		}
+	}
+
+	effect = {
+		set_variable = var_enacted_rationing
+
+		every_interest_group = {
+			limit = {
+				has_ideology = ideology:ideology_mil_antimilitarist
+			}
+			add_modifier = bpm_stubborn_ig
+		}
+
+		add_modifier = bpm_gave_primacy_of_goods_to_the_military
+
+		#every_interest_group = {
+		#	limit = {
+		#		bpm_ig_is_militaristic = yes
+		#	}
+		#	add_modifier = bpm_gave_primacy_of_goods_to_the_military
+		#}
+	}
+
+	ai_chance = {
+		base = 50 # AI wants to abolish estates ASAP when available
+	}
+}

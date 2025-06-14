@@ -51,3 +51,118 @@ je_bpm_crises_some_crisis = {
 	should_be_pinned_by_default = no
 }
 
+je_bpm_crises_war_economy = {
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+	group = je_group_bpm_crises
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = je_bpm_crises_some_crisis_desc
+			}
+		}
+	}
+
+	modifiers_while_active = {
+		# add modifiers
+		bpm_underperforming_economy
+	}
+
+	is_shown_when_inactive = {
+		# this should always be yes
+		always = yes
+	}
+
+	possible = {
+		scope:journal_entry = {
+			NOT = {
+				has_variable = bpm_crisis_ended
+			}
+		}
+		# starting triggers
+		any_country = {
+			country_rank >= rank_value:great_power
+			has_war_with = ROOT
+		}
+	}
+
+	invalid = {
+		hidden_trigger = {
+			always = no
+		}
+		# tooltip generation
+	}
+
+	complete = {
+		has_variable = var_enacted_rationing
+		has_variable = var_mass_state_deliveries
+		hidden_trigger = {
+			always = no
+		}	
+	}
+
+	on_weekly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					has_variable = var_enacted_rationing
+					has_variable = var_mass_state_deliveries
+				}
+				bpm_end_crisis = yes
+			}
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			
+		}
+	}
+
+	should_be_pinned_by_default = no
+}
+
+je_bpm_crises_war_economy_real_je = {
+	icon = "gfx/interface/icons/event_icons/event_scales.dds"
+
+	group = je_group_internal_affairs
+
+	modifiers_while_active = {
+	}
+
+	is_shown_when_inactive = {
+		always = yes
+	}
+
+	possible = {
+		#has_journal_entry = je_bpm_crises_war_economy
+		always = yes
+	}
+
+	invalid = {
+	
+	}
+
+	scripted_button = je_bpm_war_economy_rationing_implementation
+	scripted_button = je_bpm_war_economy_mass_state_deliveries
+
+	complete = {
+		
+	}
+
+	on_weekly_pulse = {
+		effect = {
+			
+		}
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			
+		}
+	}
+
+	should_be_pinned_by_default = yes
+}
+

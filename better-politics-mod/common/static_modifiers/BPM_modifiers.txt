@@ -935,6 +935,31 @@ bpm_enacting_no_confidence = {
 	country_cannot_cancel_law_enactment_bool = yes
 }
 
+bpm_underperforming_economy = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_negative.dds
+
+	country_military_goods_cost_mult = 0.5
+	country_production_tech_research_speed_mult = -0.25
+	state_radicals_from_sol_change_mult = -0.1
+}
+
+bpm_war_economy = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_coins_positive.dds
+
+	country_war_exhaustion_casualties_mult = 0.1
+	state_radicals_from_sol_change_mult = 0.25
+	country_radicals_from_legitimacy_mult = 0.25
+}
+
+bpm_gave_primacy_of_goods_to_the_military = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
+
+	country_military_goods_cost_mult = -0.1
+	building_mobilization_cost_mult = 0.25
+	building_goods_input_mult = -0.1
+	interest_group_ig_armed_forces_pop_attraction_mult = 0.5
+}
+
 bpm_brz_provinces_turmoil = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
 	country_institution_centralization_max_investment_add = -5
