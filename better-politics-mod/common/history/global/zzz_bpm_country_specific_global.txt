@@ -227,19 +227,6 @@
 
 	c:GBR = {
 		if = {
-			limit = { exists = py:liberal_party }
-			py:liberal_party = {
-				set_ruling_party = yes
-			}				
-		}
-		activate_law = law_type:law_anti_strike_laws
-		ig:ig_industrialists ?= { 
-			add_modifier = {
-				name = bpm_empowered_ig
-				days = long_modifier_time
-			}
-		}
-		if = {
 			limit = {
 				NOT = {
 					bpm_has_movement_interaction = { int = socialist_split }
@@ -247,6 +234,32 @@
 			}
 			bpm_do_socialist_split = yes
 		}
+		if = {
+			limit = {
+				NOT = {
+					bpm_has_movement_interaction = { int = marlib_split }
+				}
+			}
+			bpm_do_market_liberal_split = yes
+		}
+
+		if = {
+			limit = { exists = py:liberal_party }
+			py:liberal_party = {
+				set_ruling_party = yes
+			}				
+		}
+		
+		activate_law = law_type:law_regulatory_bodies # Multiple Factory Acts introduced forms of regulatory bodies
+		activate_law = law_type:law_national_guard # The British used the Military (like the Yeomen Cavalry) to pacify strikes
+		activate_law = law_type:law_mercantilism # Corn Laws, vanilla has protectionism for whatever reason
+		activate_law = law_type:law_private_schools # No formalized, proper schooling system has been until the 1870 Public Schools Act
+		
+		ig:ig_market_liberals = {
+			bpm_remove_all_wel_ideologies = yes
+			add_ideology = ideology_wel_paternalistic_welfare
+		}
+
 	}
 	every_country = {
 		limit = { is_subject_of = c:GBR }

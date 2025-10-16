@@ -1,0 +1,18 @@
+# Modifiers
+bpm_great_reform_act = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+
+	country_aristocrats_voting_power_add = 50
+	interest_group_ig_conservatives_pop_attraction_mult = -0.5
+	interest_group_ig_radicals_pop_attraction_mult = -0.25
+	interest_group_ig_landowners_pop_attraction_mult = 0.50
+	interest_group_ig_trade_unions_pol_str_mult = -0.5
+	state_political_strength_from_wealth_mult = 0.1
+}
+
+bpm_factory_acts = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
+
+	country_institution_workplace_safety_max_investment_add = -4
+	building_working_conditions_mult = -0.05
+}

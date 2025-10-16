@@ -1,0 +1,31 @@
+﻿l_english:
+
+ ##### Interest Groups: Great Reform Act Aftermath
+ ig_derby_dillies: "Derby Dillies"
+ ig_derby_dillies_desc: "The Derby Dilly, or Moderate Reformers, is a group of conservative dissent Whigs centered around Edward Smith-Stanley. They oppose further Whig-Irish cooperation, destruction of faithful ancient institutions and political radicalism. Torn between the increasingly radical Whiggery and the distasteful Toryism, they struggle to find their new place."
+
+ ig_whigs: "Whigs"
+ ig_whigs_desc: "The Whigs are a group as old as time, representing the increasingly liberal group of aristocrats and middle-class. They hold the belief in moderate reform, laissez-faire economics and preservation of power of the country gentlemen."
+
+ ig_radicals: "Radicals"
+ ig_radicals_desc: "The term Radicals refers to a broad set of people who collectively sub to the idea of political radicalism. Specific tendencies vary greatly, for instance, between the utilitarian Benthamites, the radical Millites and the laissez-faire Manchester Liberals."
+
+ ig_peelites: "Peelites"
+ ig_peelites_desc: "The Peelites are a faction of liberal-minded members of the Conservative Party, led by its leader Sir Robert Peel. They mainly hold the belief in co-dependence of commerce, industry and agriculture; liberal economics, softer conservatism and realism."
+
+ ig_high_tories: "High-Tories"
+ ig_high_tories_desc: "High Tories are a group of highly conservative, paternalistic and agrarianist followers of Toryism. Although have softened their conservatism with the appereance of the Conservative Party, they still retain their opposition to most change that harms the holy institutions of old."
+
+ ig_agriculturists: "Agriculturists"
+ ig_agriculturists_desc: "Agriculturists are a group centered around a simple, but often divisive question: taxation reform and agricultural development, while also withholding the conservative policy. Often led by Ultra-Tory and the so-called 'Tory Radicals' individuals, they represent the most rural-oriented wing of the Conservative Party."
+
+ ig_palmerstonian_liberals: "Palmerstonian Liberals"
+ ig_palmerstonian_liberals_desc: "Palmerstonian liberals are an incoherent group of independent gentlemen who sub to policies and ideas of Lord Palmerston. They are usually supportive of mild economic development, a wide variety of social reforms and active foreign policy."
+
+ ##### Ideologies:
+
+ ideology_eco_aristocratic_laissez_faire: "Aristocratic Laissez-Faire"
+ ideology_eco_aristocratic_laissez_faire_desc: "#lore This group believes in a market economy that operates optimally when fewer state forces intrude upon it, while also keeping the power of aristocracy intact.#!"
+ 
+ ideology_eco_aristocratic_modernizer: "Aristocratic Economic Modernizer"
+ ideology_eco_aristocratic_modernizer_desc: "#lore This group seeks to modernize the economy, keeping the power of aristocracy intact.#!"

@@ -4,6 +4,19 @@
 #
 #
 
+bpm_rename_british_debug_ig = {
+	if = {
+		limit = { ### Derby Dilly Faction
+			this = c:GBR 
+			ig:ig_conservatives ?= {
+				has_party = yes
+				party = { is_party_type = liberal_party }
+			}
+		}
+		ig:ig_conservatives ?= { set_interest_group_name = ig_derby_dillies }
+	}
+}
+
 bpm_rename_christian_democrat_ig = {
 	if = {
 		limit = {
