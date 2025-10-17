@@ -1,0 +1,53 @@
+namespace = bpm_brtish_events
+
+bpm_brtish_events.1 = { # Tithe Rentcharge Act 1838
+
+	type = country_event
+
+	dlc = dlc_bpm
+
+	event_image = {
+		video = "europenorthamerica_russian_serfs"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	title = bpm_brtish_events.1.t
+	desc = bpm_brtish_events.1.d
+	flavor = bpm_brtish_events.1.f
+
+	duration = 3
+
+	cooldown = {
+		years = 100
+	}
+
+	trigger = {
+		
+	}
+
+	immediate = {
+
+	}
+
+	option = {
+		name = bpm_brtish_events.1.a
+		default_option = yes
+
+		set_variable = bpm_last_tithe_acts_passed
+
+		every_state = {
+			limit = {
+				has_modifier = bpm_tithe_war_ireland_modifier
+				owner = ROOT
+			}
+			remove_modifier = bpm_tithe_war_ireland_modifier
+			add_modifier = {
+				name = bpm_tithe_rentcharge_act_modifier
+				is_decaying = no
+			}
+		}
+	}
+}

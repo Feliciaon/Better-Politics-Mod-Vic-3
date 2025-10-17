@@ -406,6 +406,25 @@ social_democrat_party = {
 				value = bpm_party_loyalty_values
 			}
 		}
+
+		if = { # Chartists and Owenites should stick together
+			limit = {
+				owner = c:GBR
+				OR = {
+					is_interest_group_type = ig_trade_unions
+					is_interest_group_type = ig_socialists
+				}
+				NOT = { # Liberals must not have won over the "Labor Aristocracy"
+					has_variable = bpm_second_reform_act_labor_aristocracy
+				}
+				has_variable = bpm_peoples_charter_published
+			}
+			add = {	
+				value = 25
+				desc = "bpm_from_chartism"
+			}
+		}
+
 		if = { # no socialist party before the first international
 			limit = {
 				NOT = { has_global_variable = first_intl_chain_complete_var }

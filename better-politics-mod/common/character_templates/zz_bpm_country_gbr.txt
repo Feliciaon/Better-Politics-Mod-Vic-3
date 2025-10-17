@@ -74,9 +74,11 @@ GBR_william_lamb = {
     birth_date = 1779.3.15
     ig_leader = yes
     interest_group = ig_liberals #ig_intelligentsia
-    ideology = ideology_reformer
+    ideology = ideology_moderate
     traits = {
         arrogant
+        expensive_tastes
+        basic_political_operator
     }
     on_created = {
 		bpm_set_headofgov_sticky = yes
@@ -91,8 +93,8 @@ GBR_robert_peel = {
     female = no
     ig_leader = yes
     religion = protestant
-    ideology = ideology_market_liberal
-    interest_group = ig_industrialists
+    ideology = ideology_moderate
+    interest_group = ig_market_liberals
     birth_date = 1788.2.5
     traits = {
         meticulous
@@ -100,7 +102,7 @@ GBR_robert_peel = {
         tactful
     }
     on_created = {
-		set_variable = conservative_party_leader	
+		#set_variable = conservative_party_leader	
 	}
 }
 
@@ -165,13 +167,17 @@ GBR_edward_smith-stanley = {
     first_name = Edward
     last_name = Smith-Stanley
     historical = yes
-    birth_date = 1799.1.1
     ig_leader = yes
-    interest_group = ig_conservatives #ig_landowners
-    ideology = ideology_center_leader #ideology_traditionalist
+    culture = cu:british
+    female = no
+    religion = protestant
+    ideology = ideology_center_leader
+    interest_group = ig_conservatives
+    birth_date = 1799.1.1
     traits = {
         imperious
-        arrogant
+        charismatic
+        experienced_political_operator
     }
 }
 

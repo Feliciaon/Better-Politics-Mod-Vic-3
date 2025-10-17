@@ -1,1 +1,156 @@
-﻿
+﻿je_bpm_derby_dilly = {
+	icon = "gfx/interface/icons/political_parties/liberal.dds"
+
+	group = je_group_historical_content
+
+	immediate = {
+		
+	}
+
+	scripted_button = bpm_repeal_the_lichfild_house_compact
+
+	complete = {
+		
+	}
+
+	on_complete = {
+		#custom_tooltip = {
+		#	text = bpm_je_south_unites
+		#	remove_variable = bpm_reflection_prog_var
+		#	if = {	
+		#		limit = {
+		#			owner = { 
+		#				has_law = law_type:law_free_trade
+		#				any_scope_state = {
+		#					any_scope_building = { 
+		#						is_building_type = building_cotton_plantation
+		#						level >= 15
+		#					}
+		#				} 
+		#			}
+		#		}
+		#		trigger_event = { id = bpm_acw_events.15 days = 0 popup = yes } # Nullifiers unite behind Democrats
+		#		remove_variable = bpm_divided_south
+		#	}
+		#	else = {
+		#		trigger_event = { id = bpm_acw_events.14 days = 0 popup = yes } # Nullifiers unite behind Whigs
+		#		remove_variable = bpm_divided_south
+		#		set_variable = bpm_whig_south
+		#	}
+		#}
+
+		set_variable = bpm_old_whigs_won_over
+	}
+
+	fail = {
+		custom_tooltip = {
+			text = bpm_je_gag_failure
+			var:bpm_reflection_prog_var >= 36
+		}
+	}
+
+	on_fail = {
+		
+	}
+
+	timeout = 3650
+
+	on_timeout = {
+		set_variable = bpm_derby_dilly_left
+	}
+
+	on_monthly_pulse = {
+		
+	}
+
+	weight = 100
+
+	current_value = {
+		value = root.var:bpm_reflection_prog_var
+	}
+
+	goal_add_value = {
+		value = 36
+	}
+
+	progressbar = yes
+
+	should_be_pinned_by_default = yes
+}
+
+je_bpm_irish_matters = {
+	icon = "gfx/interface/icons/invention_icons/enclosure.dds"
+
+	group = je_group_historical_content
+
+	immediate = {
+		
+	}
+
+	scripted_button = bpm_pass_the_tithe_rentcharge_act
+
+	complete = {
+		
+	}
+
+	on_complete = {
+		#custom_tooltip = {
+		#	text = bpm_je_south_unites
+		#	remove_variable = bpm_reflection_prog_var
+		#	if = {	
+		#		limit = {
+		#			owner = { 
+		#				has_law = law_type:law_free_trade
+		#				any_scope_state = {
+		#					any_scope_building = { 
+		#						is_building_type = building_cotton_plantation
+		#						level >= 15
+		#					}
+		#				} 
+		#			}
+		#		}
+		#		trigger_event = { id = bpm_acw_events.15 days = 0 popup = yes } # Nullifiers unite behind Democrats
+		#		remove_variable = bpm_divided_south
+		#	}
+		#	else = {
+		#		trigger_event = { id = bpm_acw_events.14 days = 0 popup = yes } # Nullifiers unite behind Whigs
+		#		remove_variable = bpm_divided_south
+		#		set_variable = bpm_whig_south
+		#	}
+		#}
+	}
+
+	fail = {
+		any_state = {
+			AND = {
+				state_region = s:STATE_LEINSTER
+				state_region = s:STATE_MUNSTER
+				state_region = s:STATE_CONNAUGHT
+				state_region = s:STATE_ULSTER
+			}
+			NOT = {
+				owner = ROOT
+			}
+		}
+	}
+
+	on_fail = {
+		
+	}
+
+	on_monthly_pulse = {
+		effect = {
+			
+		}
+	}
+
+	on_weekly_pulse = {
+		events = {
+			
+		}
+	}
+
+	weight = 100
+
+	should_be_pinned_by_default = yes
+}

@@ -7,25 +7,70 @@
  ig_whigs: "Whigs"
  ig_whigs_desc: "The Whigs are a group as old as time, representing the increasingly liberal group of aristocrats and middle-class. They hold the belief in moderate reform, laissez-faire economics and preservation of power of the country gentlemen."
 
- ig_radicals: "Radicals"
- ig_radicals_desc: "The term Radicals refers to a broad set of people who collectively sub to the idea of political radicalism. Specific tendencies vary greatly, for instance, between the utilitarian Benthamites, the radical Millites and the laissez-faire Manchester Liberals."
+ ig_radicals_britain: "Radicals"
+ ig_radicals_britain_desc: "The term Radicals refers to a broad set of people who collectively sub to the idea of political radicalism. Specific tendencies vary greatly, for instance, between the utilitarian Benthamites, the radical Millites and the laissez-faire Manchester Liberals."
 
  ig_peelites: "Peelites"
  ig_peelites_desc: "The Peelites are a faction of liberal-minded members of the Conservative Party, led by its leader Sir Robert Peel. They mainly hold the belief in co-dependence of commerce, industry and agriculture; liberal economics, softer conservatism and realism."
 
  ig_high_tories: "High-Tories"
- ig_high_tories_desc: "High Tories are a group of highly conservative, paternalistic and agrarianist followers of Toryism. Although have softened their conservatism with the appereance of the Conservative Party, they still retain their opposition to most change that harms the holy institutions of old."
+ ig_high_tories_desc: "High Tories are a group of highly conservative, paternalistic and agrarianist followers of modern Toryism. Although have softened their conservatism with the appereance of the Conservative Party, they still retain their opposition to most change that harms the holy institutions of old."
 
  ig_agriculturists: "Agriculturists"
- ig_agriculturists_desc: "Agriculturists are a group centered around a simple, but often divisive question: taxation reform and agricultural development, while also withholding the conservative policy. Often led by Ultra-Tory and the so-called 'Tory Radicals' individuals, they represent the most rural-oriented wing of the Conservative Party."
+ ig_agriculturists_desc: "Agriculturists are a group centered around a simple, but often a dividing question: taxation reform and agricultural development, while also withholding the conservative policy. Often led by Ultra-Tory and the so-called 'Tory Radical' individuals, they represent the most rural-oriented wing of the Conservative Party."
 
  ig_palmerstonian_liberals: "Palmerstonian Liberals"
  ig_palmerstonian_liberals_desc: "Palmerstonian liberals are an incoherent group of independent gentlemen who sub to policies and ideas of Lord Palmerston. They are usually supportive of mild economic development, a wide variety of social reforms and active foreign policy."
+
+ ig_irish_repealers: "Irish Repealers"
+ ig_irish_repealers_desc: "The Acts of Union passed in 1800 united Ireland and Great Britain into a one, unified state — taking the self-governance of the Irish away in favor of a merged parliament in London. The Repealers seek to bring back the legislative autonomy, while also maintaning loyalty to the crown and cautiousness in action."
 
  ##### Ideologies:
 
  ideology_eco_aristocratic_laissez_faire: "Aristocratic Laissez-Faire"
  ideology_eco_aristocratic_laissez_faire_desc: "#lore This group believes in a market economy that operates optimally when fewer state forces intrude upon it, while also keeping the power of aristocracy intact.#!"
  
- ideology_eco_aristocratic_modernizer: "Aristocratic Economic Modernizer"
+ ideology_eco_aristocratic_modernizer: "Aristocratic Modernizer"
  ideology_eco_aristocratic_modernizer_desc: "#lore This group seeks to modernize the economy, keeping the power of aristocracy intact.#!"
+
+ ideology_dop_aristocratic_democrat: "Aristocratic-Democrat"
+ ideology_dop_aristocratic_democrat_desc: "#lore Striking a middle stance, this group holds suffrage as a political principle, but believes that strong limits must be imposed to ensure the unwashed, uncultured masses don't rule.#!"
+
+ ideology_dop_toryist: "Toryist"
+ ideology_dop_toryist_desc: "#lore Opposing the recently introduced Great Reform Act, the Toryists seek to return to the times of old, or at least limit the impact of the reform.#!"
+
+ ##### Modifiers:
+
+ bpm_great_reform_act: "Aftermath of the Great Reform Act"
+ bpm_factory_acts: "Factory Acts"
+ bpm_two_and_six_acts: "The Two Acts and Six Acts"
+ bpm_repealed_the_lichfield_house_compact_modifier: "Abandoned the Irish Repeal Cause"
+ 
+ ##### Journal Entries: The Derby Dilly
+
+ 
+
+ bpm_derby_dilly_is_in_the_whig_party: "The [GetInterestGroupVariant('ig_agrarian_populists',GetPlayer).GetNameWithCountryVariant] are in the #yellow Whig Party#!"
+ bpm_the_irish_will_become_a_party: "The [GetInterestGroupVariant('ig_agrarian_populists',GetPlayer).GetName] will be kicked out of the #yellow Whig Party#!, and now will be electorally independent."
+ bpm_passed_the_last_grat_tithe_rentcharge_act: "Passed the last Tithe Act, ending fully the #gold Tithe War#!."
+
+ bpm_repeal_the_lichfild_compact_name: "Repeal the Lichfield Compact"
+
+ ###### Journal Entries: Irish Matters
+
+ je_bpm_irish_matters: "The Matters of Ireland"
+ je_bpm_irish_matters_reason: "Ireland and Great Britain have been intertwined with each other for decades. And with the Acts of Union passed in 1800, the matters and issues plaguing Ireland were brought to the floors of Westminster. Ridden with poor quality of life, internal strifes, crime and whispers of independence, the Crown must take great, careful care of the Emerald Isle.\n\nYou will receive various #gold Objectives#! to deal with colorful issues plaguing the #yellow Island of Ireland#!, which you will be able to complete. Sometimes opposing #gold Objectives#! may appear, but only one of them can be completed — neglecting an issue will result in #r penalties#!.\n\n#lore Thus you have a starving population, an absentee aristocracy and an alien Church, and in addition the weakest executive in the world. That is the Irish question.\n— Bejnamin Disraeli, 1844#!"
+ je_bpm_irish_matters_status: "Deal with the Irish Question."
+
+ bpm_pass_the_tithe_rentcharge_act_name: "Objective: End the Tithe War"
+ bpm_pass_the_tithe_rentcharge_act_desc: "The so-called 'Tithe War' has been going on for a few years now. Filled with unloyalty to the Crown through refusal to pay the tithe for the upkeep of the Anglican Church of Ireland, it was also suplemented by violent encounters whenever authorities tried to ensure payment. Violence and money lost caused by the War must finally end, and the tithes reduced and reformed.\n\nThe following requirements must be met to finish this objective."
+
+ william_4_dead: "King William IV of Hanover has died"
+
+ bpm_brtish_events.1.t: "The Tithe Rentcharge Act"
+ bpm_brtish_events.1.d: "The so-called #gold Tithe War#! has been going on for many years. A war over paying a tithe share to the Anglican Church of Ireland, on the predominantly Catholic Island. And with the latest Tithe Rentcharge Act, this war comes to a full end. Now tax is paid to the landlord, who then passes the payment to the Crown."
+ bpm_brtish_events.1.f: "There are many noble traits in the Irish character, mixed with failings which have always raised obstacles to their own well-being; but an innate love of justice, and an indomitable hatred of oppression, is like a gem upon the front of our nation, which no darkness can obscure. To this fine quality I trace their hatred of tithe. May it be as lasting as their love of justice!\n— Lord Farnham, 1831"
+ bpm_brtish_events.1.a: "Hopefully this calms them down for the time being."
+
+ bpm_tithe_war_ireland_modifier: "Tithe War"
+ bpm_tithe_rentcharge_act_modifier: "Tithe Rentcharge Act"

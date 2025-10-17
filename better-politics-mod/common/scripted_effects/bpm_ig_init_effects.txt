@@ -23,7 +23,16 @@ bpm_initialize_agpops = {
 			#add_ideology = ideology_sta_decentralized_state
 			add_ideology = ideology_sta_minimal_state
 			add_ideology = ideology_cit_liberal_nationalist
-			add_ideology = ideology_rel_secularist
+
+			if = {
+				limit = { ROOT = c:GBR }
+				add_ideology = ideology_rel_pragmatic_moralist
+			}
+
+			else = {
+				add_ideology = ideology_rel_secularist
+			}
+
 			add_ideology = ideology_mil_antimilitarist
 			add_ideology = ideology_ban_averse
 			# Vanilla ideologies
@@ -204,6 +213,10 @@ bpm_initialize_natlibs = {
 				limit = { ROOT = { bpm_country_is_latin_american = yes } }
 				add_ideology = ideology_dop_technocrat
 			}
+			if = {
+				limit = { ROOT = { this = c:GBR } }
+				add_ideology = ideology_dop_aristocratic_democrat
+			}
 			# Else moderate democrat
 			else = { add_ideology = ideology_dop_moderate_democrat }
 			# Progressive natlibs if Germans or LatAm
@@ -219,6 +232,14 @@ bpm_initialize_natlibs = {
 					}
 				}
 				add_ideology = ideology_sta_progressive_state
+			}
+			if = {
+				limit = {
+					ROOT = { 
+						this = c:GBR
+					}
+				}
+				add_ideology = ideology_sta_weak_state
 			}
 			# Else security state
 			else = { add_ideology = ideology_sta_security_state }
@@ -257,7 +278,13 @@ bpm_initialize_natlibs = {
 				add_ideology = ideology_rel_radical_secularist
 			}
 			else = { add_ideology = ideology_rel_moralist }
-			add_ideology = ideology_jingoist
+			if = {
+				limit = { ROOT = c:GBR }
+				add_ideology = ideology_mil_patriotic_liberal
+			}
+			else = {
+				add_ideology = ideology_jingoist
+			}
 			# Latin american Positivists
 			if = {
 				limit = { ROOT = { bpm_country_is_latin_american = yes } }
@@ -269,7 +296,7 @@ bpm_initialize_natlibs = {
 					ROOT = {
 						OR = {
 							this = c:USA
-							this = c:GBR
+							#this = c:GBR
 							country_has_primary_culture = cu:north_german
 							country_has_primary_culture = cu:south_german
 							country_has_primary_culture = cu:danish
@@ -278,6 +305,10 @@ bpm_initialize_natlibs = {
 					}
 				}
 				add_ideology = ideology_eco_laissez_faire
+			}
+			else_if = {
+				limit = { ROOT = { this = c:GBR } }
+				add_ideology = ideology_eco_aristocratic_modernizer
 			}
 			else_if = {
 				limit = { ROOT = { this = c:HAW } }

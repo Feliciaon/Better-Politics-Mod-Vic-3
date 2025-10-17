@@ -131,6 +131,18 @@ law_repeatable_economy_agricultural_investment = {
 			custom_tooltip = bpm_law_effect_tt_repeatable_different_wine_content
 			trigger_event = bpm_new_wine_old_wineskins_flavour.102
 		}
+
+		if = { 
+			limit = {
+				has_journal_entry = je_bpm_irish_matters
+				NOT = {
+					has_variable = bpm_last_tithe_acts_passed
+				}
+			}
+			hidden_effect = {
+				trigger_event = bpm_brtish_events.1
+			}
+		}
 		
 		bpm_transfer_money_to_investors = { AMT = bpm_repeatable_law_investment_transfer_amount }
 		if = {

@@ -344,6 +344,7 @@ conservative_party = {
 		# leftists will not join conservatives
 		OR = {
 			owner = { c:USA ?= THIS }
+			owner = { c:GBR ?= THIS }
 			NOR = { 
 				bpm_ig_is_radical_left = yes
 			}
@@ -351,6 +352,7 @@ conservative_party = {
 		leader = {
 			OR = {
 				owner = { c:USA ?= THIS }
+				owner = { c:GBR ?= THIS }
 				NOR = {
 					bpm_leader_is_socialist = yes
 					bpm_leader_is_radical_liberal = yes
@@ -1047,6 +1049,20 @@ conservative_party = {
 			}
 		}
 
+		if = { # 
+			limit = {
+				owner = c:GBR
+				is_interest_group_type = ig_trade_unions
+				NOT = {
+					has_variable = bpm_peoples_charter_published
+				}
+			}
+			add = {	
+				value = -25
+				desc = "bpm_from_banned_from_politics"
+			}
+		}
+
 		if = { # Christian Democrats hate cons except when strong radiicals/socialists
 			limit = {
 				is_interest_group_type = ig_christian_democrats
@@ -1105,7 +1121,7 @@ conservative_party = {
 		# ===========================================================================
 		# Generic
 		if = {
-			limit = { NOT = { owner = c:USA } }
+			limit = { NOR = { owner = c:USA owner = c:GBR } }
 			if = {
 				limit = { leader = { has_variable = conservative_party_leader } }
 				add = {
@@ -1121,6 +1137,173 @@ conservative_party = {
 				}
 			}
 		}
+
+		# GBR
+		else_if = {
+			limit = { owner = c:GBR }
+			# Generic
+			if = { 
+				limit = {
+					OR = {
+						is_interest_group_type = ig_reactionaries
+					}
+					NOT = {
+						owner = { has_law = law_type:law_council_republic }
+					}
+				}
+				add = {
+					value = 20
+					desc = "bpm_from_torysim"
+				}
+			}
+			# Aftermath of the Great Reform Act
+			if = {
+				limit = { owner = { has_variable = bpm_aftermath_of_the_great_reform_act } }
+				if = {
+					limit = { leader = { has_variable = conservative_party_leader } }
+					add = {
+						value = 100
+						desc = "bpm_historical_leader"
+					}
+				}
+				else_if = {
+					limit = { leader = { has_variable = anti_conservative_party_leader } }
+					add = {
+						value = -100
+						desc = "bpm_historical_leader"
+					}
+				}
+				if = { 
+					limit = {
+						OR = {
+							is_interest_group_type = ig_devout
+							is_interest_group_type = ig_rural_folk
+							is_interest_group_type = ig_armed_forces
+							is_interest_group_type = ig_landowners
+						}
+					}
+					add = {
+						value = 50
+						desc = "bpm_great_reform_act"
+					}
+				}
+				else_if = {
+					limit = {
+						is_interest_group_type = ig_market_liberals
+					}
+					add = {
+						value = 50
+						desc = "bpm_great_reform_act"
+					}
+				}
+			}
+			# Corn Laws Era? / Liberal Party Era
+			else_if = {
+				limit = {
+					owner = { 
+						NOT = { has_variable = bpm_2nd_party_system }
+						NOT = { has_global_variable = american_civil_war }
+						bpm_country_has_unfree_labor = yes
+					}
+					always = no
+				}
+				if = {
+					limit = { 
+						OR = {
+							is_interest_group_type = ig_christian_democrats
+							AND = {
+								is_interest_group_type = ig_trade_unions
+								NOT = {
+									owner = { has_law = law_type:law_council_republic }
+								}
+							}
+							is_interest_group_type = ig_rural_folk
+							is_interest_group_type = ig_market_liberals
+							is_interest_group_type = ig_petty_bourgeoisie
+							is_interest_group_type = ig_national_liberals
+						}
+					}
+					add = {
+						value = 25
+						desc = "bpm_second_party_system"
+					}
+				}
+			}
+			# Third Party System, from Civil War to Reconstruction
+			else_if = {
+				limit = {
+					owner = { 
+						NOT = { has_variable = bpm_2nd_party_system }
+						has_global_variable = american_civil_war
+						NOT = { has_variable = bpm_spoils_aftermath }
+					}
+				}
+				if = {
+					limit = { 
+						OR = {
+							is_interest_group_type = ig_christian_democrats
+							AND = {
+								is_interest_group_type = ig_trade_unions
+								NOT = {
+									owner = { has_law = law_type:law_council_republic }
+								}
+							}
+							is_interest_group_type = ig_rural_folk
+							is_interest_group_type = ig_market_liberals
+							is_interest_group_type = ig_petty_bourgeoisie
+							AND = {
+								owner = { has_variable = bpm_rec_libparty }
+								is_interest_group_type = ig_national_liberals
+							}
+						}
+					}
+					add = {
+						value = 25
+						desc = "bpm_third_party_system"
+					}
+				}
+			}
+			# Third Party System, after Spoils Debate
+			else_if = {
+				limit = {
+					owner = { 
+						NOT = { has_variable = bpm_2nd_party_system }
+						has_variable = bpm_spoils_aftermath
+					}
+				}
+				if = {
+					limit = { 
+						is_interest_group_type = ig_christian_democrats
+						OR = {
+							AND = {
+								is_interest_group_type = ig_trade_unions
+								NOT = { owner = { has_law = law_type:law_council_republic } }
+								NOT = { owner = { has_variable = bpm_solidarity_knights_of_labor } }
+							}
+							AND = {
+								is_interest_group_type = ig_rural_folk
+								NOT = { owner = { has_variable = bpm_solidarity_national_grange } }
+							}
+							is_interest_group_type = ig_market_liberals
+							is_interest_group_type = ig_petty_bourgeoisie
+							AND = {
+								owner = { NOT = { has_variable = bpm_spoils_stalwart } }
+								is_interest_group_type = ig_radicals
+							}
+							AND = {
+								owner = { NOT = { has_variable = bpm_spoils_liberal } }
+								is_interest_group_type = ig_national_liberals
+							}
+						}
+					}
+					add = {
+						value = 25
+						desc = "bpm_third_party_system"
+					}
+				}
+			}
+		}
+
 		# USA
 		else_if = {
 			limit = { owner = c:USA }

@@ -48,6 +48,18 @@
 
 		rule = {
 			trigger = {
+				c:GBR ?= this
+				any_primary_culture = { 
+					cu:british = this
+				}
+			}
+			cultures = {
+				irish
+			}
+		}
+
+		rule = {
+			trigger = {
 				c:CHI ?= this
 				any_primary_culture = { 
 					cu:manchu = this
@@ -71,10 +83,19 @@
 				}
 			}
 		}
-		NOR = {
-			is_pop_type = aristocrats
-			is_pop_type = capitalists
-			is_pop_type = bureaucrats
+		OR = {
+			NOR = {
+				is_pop_type = aristocrats
+				is_pop_type = capitalists
+				is_pop_type = bureaucrats	
+			}
+			AND = {
+				exists = c:GBR
+				owner ?= c:GBR
+				NOT = {
+					is_pop_type = capitalists
+				}
+			}
 		}
 	}
 	
@@ -191,6 +212,35 @@
 					owner = { has_law = law_type:law_serfdom }
 				}
 				value = 100
+			}
+		}
+
+		if = {
+			limit = {
+				owner = {
+					this = c:GBR
+				}
+			}
+			add = {
+				desc = "POP_NOT_IRISH"
+				if = {
+					limit = { 
+						NOT = {
+							has_pop_culture = irish
+						}
+					}
+					value = -1000
+				}
+			}
+
+			add = {
+				desc = "IRISH"
+				if = {
+					limit = { 
+						has_pop_culture = irish
+					}
+					value = 250
+				}
 			}
 		}
 

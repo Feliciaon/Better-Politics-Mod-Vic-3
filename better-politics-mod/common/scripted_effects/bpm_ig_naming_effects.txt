@@ -8,12 +8,64 @@ bpm_rename_british_debug_ig = {
 	if = {
 		limit = { ### Derby Dilly Faction
 			this = c:GBR 
-			ig:ig_conservatives ?= {
-				has_party = yes
-				party = { is_party_type = liberal_party }
-			}
+			always = yes
 		}
 		ig:ig_conservatives ?= { set_interest_group_name = ig_derby_dillies }
+	}
+	if = {
+		limit = { ### Whig Faction
+			this = c:GBR 
+			always = yes
+		}
+		ig:ig_liberals ?= { set_interest_group_name = ig_whigs }
+	}
+
+	if = {
+		limit = {
+			this = c:GBR
+			always = yes
+		}
+		ig:ig_radicals ?= { set_interest_group_name = ig_radicals_britain }
+	}
+
+	if = {
+		limit = {
+			this = c:GBR 
+			always = yes
+		}
+		ig:ig_market_liberals ?= { set_interest_group_name = ig_peelites }
+	}
+
+	if = {
+		limit = {
+			this = c:GBR 
+			always = yes
+		}
+		ig:ig_reactionaries ?= { set_interest_group_name = ig_high_tories }
+	}
+
+	if = {
+		limit = {
+			this = c:GBR 
+			always = yes
+		}
+		ig:ig_rural_folk ?= { set_interest_group_name = ig_agriculturists }
+	}
+
+	if = {
+		limit = {
+			this = c:GBR 
+			always = yes
+		}
+		ig:ig_national_liberals ?= { set_interest_group_name = ig_palmerstonian_liberals }
+	}
+
+	if = {
+		limit = {
+			this = c:GBR 
+			always = yes
+		}
+		ig:ig_agrarian_populists ?= { set_interest_group_name = ig_irish_repealers }
 	}
 }
 
@@ -1655,5 +1707,6 @@ bpm_rename_igs = {
 		bpm_rename_marlib_ig = yes
 		bpm_rename_conservative_ig = yes
 		bpm_rename_reactionary_ig = yes	
+		bpm_rename_british_debug_ig = yes
 	}
 }

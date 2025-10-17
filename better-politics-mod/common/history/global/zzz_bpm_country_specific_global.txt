@@ -254,12 +254,85 @@
 		activate_law = law_type:law_national_guard # The British used the Military (like the Yeomen Cavalry) to pacify strikes
 		activate_law = law_type:law_mercantilism # Corn Laws, vanilla has protectionism for whatever reason
 		activate_law = law_type:law_private_schools # No formalized, proper schooling system has been until the 1870 Public Schools Act
+		activate_law = law_type:law_anti_strike_laws # Combination of Workingmen Act, 1825?
+
+		activate_law = law_type:law_no_health_system
 		
 		ig:ig_market_liberals = {
+			add_ideology = ideology_exe_ceremonial
+			bpm_remove_all_dop_ideologies = yes
+			add_ideology = ideology_dop_aristocratic_democrat
+			bpm_remove_all_eco_ideologies = yes
+			add_ideology = ideology_eco_aristocratic_modernizer
+			bpm_remove_all_wel_ideologies = yes
+			add_ideology = ideology_wel_paternalistic_welfare
+
+			bpm_reorder_ideologies = yes
+		}
+
+		ig:ig_liberals = {
+			bpm_remove_all_dop_ideologies = yes
+			add_ideology = ideology_dop_aristocratic_democrat
+			bpm_remove_all_eco_ideologies = yes
+			add_ideology = ideology_eco_aristocratic_laissez_faire
+			bpm_remove_all_mil_ideologies = yes
+			add_ideology = ideology_mil_plutocratic_militarist
+
+			bpm_reorder_ideologies = yes
+		}
+
+		ig:ig_radicals = {
+			bpm_remove_all_gov_ideologies = yes
+			bpm_remove_all_dop_ideologies = yes
+			add_ideology = ideology_dop_moderate_democrat
+			bpm_remove_all_eco_ideologies = yes
+			add_ideology = ideology_eco_aristocratic_laissez_faire
+
+			bpm_reorder_ideologies = yes
+		}
+		
+		ig:ig_conservatives = {
+			bpm_remove_all_dop_ideologies = yes
+			add_ideology = ideology_dop_aristocratic_democrat
+
+			bpm_reorder_ideologies = yes
+		}
+
+		ig:ig_reactionaries = {
+			bpm_remove_all_dop_ideologies = yes
+			add_ideology = ideology_dop_toryist
+			bpm_remove_all_wel_ideologies = yes
+			add_ideology = ideology_wel_paternalistic_welfare
+			bpm_remove_all_sta_ideologies = yes
+			add_ideology = ideology_sta_powerful_state
+
+			bpm_reorder_ideologies = yes
+		}
+
+		ig:ig_landowners = {
+			bpm_remove_all_dop_ideologies = yes
+			add_ideology = ideology_dop_toryist
 			bpm_remove_all_wel_ideologies = yes
 			add_ideology = ideology_wel_paternalistic_welfare
 		}
 
+		ig:ig_rural_folk = {
+			bpm_remove_all_eco_ideologies = yes
+			add_ideology = ideology_eco_conservative_agrarian
+		}
+
+		every_state = {
+			limit = {
+				OR = {
+					state_region = s:STATE_LEINSTER
+					state_region = s:STATE_MUNSTER
+					state_region = s:STATE_CONNAUGHT
+					state_region = s:STATE_ULSTER
+				}
+			}
+			set_state_type = incorporated
+			add_modifier = bpm_tithe_war_ireland_modifier
+		}
 	}
 	every_country = {
 		limit = { is_subject_of = c:GBR }
