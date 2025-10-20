@@ -1,16 +1,66 @@
 ﻿je_bpm_derby_dilly = {
-	icon = "gfx/interface/icons/political_parties/liberal.dds"
+	icon = "gfx/interface/icons/invention_icons/democracy.dds"
 
 	group = je_group_historical_content
 
 	immediate = {
-		
+		set_variable = {
+			name = bpm_the_derby_dilly_lonelyness
+			value = 0
+		}
 	}
 
 	scripted_button = bpm_repeal_the_lichfild_house_compact
+	scripted_button = bpm_supress_the_radicals
 
 	complete = {
-		
+		custom_tooltip = {
+			text = je_bpm_has_repealed_the_compact
+			has_variable = bpm_repealed_lichfield_compact
+		}
+
+		custom_tooltip = {
+			text = je_bpm_has_given_a_cabinet_position_to_conservatives
+			OR = {
+				var:bpm_minister_of_social_security.interest_group ?= ig:ig_conservatives
+				var:bpm_minister_of_colonial_affairs.interest_group ?= ig:ig_conservatives
+				var:bpm_minister_of_workplace_safety.interest_group ?= ig:ig_conservatives
+				var:bpm_minister_of_police.interest_group ?= ig:ig_conservatives
+				var:bpm_minister_of_health_system.interest_group ?= ig:ig_conservatives
+				var:bpm_minister_of_schools.interest_group ?= ig:ig_conservatives
+				var:bpm_minister_of_home_affairs.interest_group ?= ig:ig_conservatives
+				var:bpm_minister_of_centralization.interest_group ?= ig:ig_conservatives
+				var:bpm_minister_of_suffrage.interest_group ?= ig:ig_conservatives
+				var:bpm_minister_of_culture.interest_group ?= ig:ig_conservatives
+				var:bpm_minister_of_diplomacy.interest_group ?= ig:ig_conservatives
+			}
+		}
+
+		OR = {
+			ig:ig_liberals ?= {
+				is_powerful = yes
+			}
+			ig:ig_radicals ?= {
+				ig_clout <= 0.05
+			}
+			custom_tooltip = {
+				text = radicals_abandoned_the_whigs
+				NOT = {
+					ig:ig_radicals ?= {
+						has_party = yes
+						party = { is_party_type = liberal_party }
+					}
+				}
+			}
+		}
+
+		any_scope_state = {
+			state_region = s:STATE_LEINSTER
+			any_scope_building = { 
+				is_building_type = building_university
+				level >= 10
+			}
+		}
 	}
 
 	on_complete = {
@@ -39,38 +89,56 @@
 		#	}
 		#}
 
-		set_variable = bpm_old_whigs_won_over
+		custom_tooltip = {
+			text = bpm_old_whigs_have_been_won_over
+			
+			trigger_event = {
+				id = bpm_brtish_events.4
+				popup = yes
+			}
+		}
 	}
 
 	fail = {
 		custom_tooltip = {
-			text = bpm_je_gag_failure
-			var:bpm_reflection_prog_var >= 36
+			text = bpm_je_departure_of_the_derby_dilly
+			var:bpm_the_derby_dilly_lonelyness >= 60
 		}
 	}
 
 	on_fail = {
-		
-	}
-
-	timeout = 3650
-
-	on_timeout = {
-		set_variable = bpm_derby_dilly_left
+		custom_tooltip = {
+			text = bpm_derby_dilly_left
+			
+			trigger_event = {
+				id = bpm_brtish_events.3
+				popup = yes
+			}
+		}
 	}
 
 	on_monthly_pulse = {
-		
+		effect = {
+			change_variable = {
+				name = bpm_the_derby_dilly_lonelyness
+				add = 1
+			}
+		}
+	}
+	on_weekly_pulse = {
+		events = {
+			bpm_brtish_events.2 # Radicals Withdraw their Close Support
+		}
 	}
 
 	weight = 100
 
 	current_value = {
-		value = root.var:bpm_reflection_prog_var
+		value = root.var:bpm_the_derby_dilly_lonelyness
 	}
 
 	goal_add_value = {
-		value = 36
+		value = 60
 	}
 
 	progressbar = yes

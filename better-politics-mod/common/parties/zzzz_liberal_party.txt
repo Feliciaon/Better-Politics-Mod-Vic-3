@@ -1292,7 +1292,6 @@ liberal_party = {
 				if = {
 					limit = { 
 						OR = {
-							is_interest_group_type = ig_radicals
 							is_interest_group_type = ig_liberals
 							is_interest_group_type = ig_industrialists
             				is_interest_group_type = ig_intelligentsia
@@ -1330,12 +1329,28 @@ liberal_party = {
 							NOR = {
 								has_variable = bpm_independent_irish_party_appeared
 								has_variable = bpm_repealed_lichfield_compact
+								has_variable = bpm_oconnell_found_lichfield_disillusioning
 							}
 						}
 					}
 					add = {
 						value = 50
 						desc = "bpm_lichfield_house_compact"
+					}
+				}
+
+				else_if = { # Radicals might withdraw their support if they find the Whigs' policy evil
+					limit = {
+						is_interest_group_type = ig_radicals
+						owner = { 
+							NOT = {
+								has_variable = bpm_radicals_discontent
+							}
+						}
+					}
+					add = {
+						value = 50
+						desc = "bpm_great_reform_act"
 					}
 				}
 			}

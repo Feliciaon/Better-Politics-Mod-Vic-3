@@ -10,15 +10,15 @@
 
 	possible = {
 		custom_tooltip = {
-			text = bpm_passed_the_last_grat_tithe_rentcharge_act
-			has_variable = bpm_last_tithe_acts_passed
-		}
-		custom_tooltip = {
 			text = bpm_derby_dilly_is_in_the_whig_party
 			ig:ig_conservatives ?= {
 				has_party = yes
 				party = { is_party_type = liberal_party }
 			}
+		}
+		custom_tooltip = {
+			text = bpm_passed_the_last_grat_tithe_rentcharge_act
+			has_variable = bpm_last_tithe_acts_passed
 		}
 	}
 
@@ -29,13 +29,84 @@
 			scripted_effect_parties_emergence = yes
 		}
 		add_radicals = {
-			value = 0.02
+			value = 0.1
 			culture = cu:irish
 		}
 		ig:ig_agrarian_populists ?= {
 			add_modifier = {
 				name = bpm_repealed_the_lichfield_house_compact_modifier
 				years = 10
+			}
+		}
+		ig:ig_radicals ?= {
+			add_modifier = {
+				name = bpm_repealed_the_lichfield_house_compact_modifier_radicals
+				years = 10
+			}
+		}
+	}
+}
+
+bpm_supress_the_radicals = {
+	name = "bpm_supress_the_radicals_name"
+	desc = "bpm_supress_the_radicals_desc"
+
+	visible = {
+    	exists = c:GBR
+		root = c:GBR
+		NOT = { has_variable = bpm_supressed_the_radicals_variable }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = bpm_derby_dilly_is_in_the_whig_party
+			ig:ig_conservatives ?= {
+				has_party = yes
+				party = { is_party_type = liberal_party }
+			}
+		}
+	}
+
+	effect = {
+		set_variable = bpm_supressed_the_radicals_variable
+		add_radicals = {
+			value = 0.02
+			strata = middle
+		}
+		ig:ig_radicals ?= {
+			add_modifier = {
+				name = bpm_supressed_interest_group
+				years = 5
+				is_decaying = yes
+			}
+		}
+
+		ig:ig_intelligentsia ?= {
+			add_modifier = {
+				name = bpm_supressed_interest_group
+				years = 5
+				is_decaying = yes
+			}
+		}
+
+		add_modifier = {
+			name = bpm_unstable_alliance_against_the_tories
+			years = 5
+			is_decaying = yes
+		}
+
+		custom_tooltip = {
+			text = radicals_might_abandon_you
+			random_list = {
+				20 = {}
+				30 = {
+					set_variable = bpm_radicals_discontent
+					#trigger_event = {
+					#	id = bpm_brtish_events.2
+					#	months = 1
+					#	popup = yes
+					#}
+				}
 			}
 		}
 	}

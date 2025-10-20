@@ -1,8 +1,20 @@
 ﻿l_english:
 
  ##### Interest Groups: Great Reform Act Aftermath
- ig_derby_dillies: "Derby Dillies"
+ ### Conservative IG
+ ig_derby_dillies: "Derby Dilly"
  ig_derby_dillies_desc: "The Derby Dilly, or Moderate Reformers, is a group of conservative dissent Whigs centered around Edward Smith-Stanley. They oppose further Whig-Irish cooperation, destruction of faithful ancient institutions and political radicalism. Torn between the increasingly radical Whiggery and the distasteful Toryism, they struggle to find their new place."
+
+ ig_conservative_whigs: "Conservative Whigs"
+ ig_conservative_whigs_desc: "With the succesful reinvigoration of the Grand Whig spirit, the conservative Whigs represent the older generation of Whiggist policy. Holding the belief in progress and reform, while also ensuring the protection of old, stable institutions and values, they contrast themselves from their more liberal counterparts by having a more protectionist outlook."
+ 
+ ig_tories: "Tories"
+ ig_tories_desc: "Tories are a conservative group representing the more landed and moderate interests of aristocrats and tenants. They hold the belief in neccessary reform, paternalism and ruralism, while also accepting modern innovation and change."
+ 
+ ig_protectionists: "Protectionists"
+ ig_protectionists_desc: "Over the issue of the repeal of Corn Laws, many Tory gentlemen have accepted the label 'Protectionist' to pronounce their support for keeping the Corn Laws unless neccessary and satisfying circumstances were to happen. Their opposition to the ruling Peelites thereby causes them to lose important influence and party cohesion."
+
+ ### Liberal IG
 
  ig_whigs: "Whigs"
  ig_whigs_desc: "The Whigs are a group as old as time, representing the increasingly liberal group of aristocrats and middle-class. They hold the belief in moderate reform, laissez-faire economics and preservation of power of the country gentlemen."
@@ -44,17 +56,66 @@
  bpm_great_reform_act: "Aftermath of the Great Reform Act"
  bpm_factory_acts: "Factory Acts"
  bpm_two_and_six_acts: "The Two Acts and Six Acts"
- bpm_repealed_the_lichfield_house_compact_modifier: "Abandoned the Irish Repeal Cause"
+ bpm_repealed_the_lichfield_house_compact_modifier: "Abandoned the Irish Cause"
+ bpm_repealed_the_lichfield_house_compact_modifier_radicals: "Abandoned the Irish Cause"
+
  
  ##### Journal Entries: The Derby Dilly
 
- 
+ je_bpm_dublin_has_10_or_more_unis: "[GetStateRegion('STATE_LEINSTER').GetName] has at least #bold 10 or more#! [GetBuildingType('building_university').GetName] [Concept('concept_building', '$concept_buildings$')]" 
 
- bpm_derby_dilly_is_in_the_whig_party: "The [GetInterestGroupVariant('ig_agrarian_populists',GetPlayer).GetNameWithCountryVariant] are in the #yellow Whig Party#!"
- bpm_the_irish_will_become_a_party: "The [GetInterestGroupVariant('ig_agrarian_populists',GetPlayer).GetName] will be kicked out of the #yellow Whig Party#!, and now will be electorally independent."
- bpm_passed_the_last_grat_tithe_rentcharge_act: "Passed the last Tithe Act, ending fully the #gold Tithe War#!."
+ bpm_derby_dilly_is_in_the_whig_party: "The [GetInterestGroupVariant('ig_conservatives',GetPlayer).GetNameWithCountryVariant] is in the #brightyellow Whig Party#!"
+ bpm_the_irish_will_become_a_party: "The [GetInterestGroupVariant('ig_agrarian_populists',GetPlayer).GetName] will be kicked out of the #brightyellow Whig Party#!, and now will be electorally independent."
+ bpm_passed_the_last_grat_tithe_rentcharge_act: "The '#gold Tithe War#!' has ended."
 
  bpm_repeal_the_lichfild_compact_name: "Repeal the Lichfield Compact"
+ bpm_repeal_the_lichfild_compact_desc: "The Lichfield House Compact is an agreement made in 1835 between the Irish Repealers, Radicals and Whigs to act as one block against the reformed Conservative Party. For elecotral support of the Irish Repealers, the British have promised their leader — Daniel O'Connell — various reforms.\n\nWe promised a purge of Irish administration from the influence of the Orange Lodgers, reforming the old Corporations, reforming the tithe and a few more minor reforms. This alliance, though, has only caused unneccessary issues; O'Connell is a dangerous radical, and expects grand, unattainable reforms. We must end it."
+
+ radicals_abandoned_the_whigs: "[GetInterestGroupVariant('ig_radicals',GetPlayer).GetName] have given up their support for the [GetInterestGroupVariant('ig_liberals',GetPlayer).GetName]"
+ 
+ bpm_old_whigs_have_been_won_over: "The [GetInterestGroupVariant('ig_conservatives',GetPlayer).GetName] has been satisfied, keeping their loyalty and #brightyellow Whig#! identity."
+
+ bpm_derby_dilly_left: "The [GetInterestGroupVariant('ig_conservatives',GetPlayer).GetName], disillusioned by the abandonment of the ideals of Great Wiggism, leave in favor of the #blue Tories#!."
+
+
+
+ je_bpm_derby_dilly: "The Derby Dilly"
+ je_bpm_derby_dilly_reason: "#italic During the 1833-1834 debates on the Church Temporalities Act a provision of said bill was said to allow the Parliament to appropriate property of Church of Ireland, which deeply enraged Tories and placated Radicals. Although Lord Grey's Government denied that the provision existed, and Edward Smith-Stanley pushed the clause 147, which left the question unanswerable, no one was left satisfied.\n\nLater on, Lord Russel has expressed support for such measure, which dissatisfied the more conservative members of the cabinet. One such man was the aforementioned Lord Stanley, who resigned in protest. He then created a distinct group of similarly abandoned interests, opposing political radicalism and destruction of stable, old institutions. Although the Derby Dilly has been on the road towards the Conservative Party, they still keep their independence known.#!\n\nThe [GetInterestGroupVariant('ig_conservatives',GetPlayer).GetName] is a group led by a young and charismatic leader, with many incredibly skilled members and ties. They demand reactionary decisions, expecting the #gold Lichfield House Compact#! to be repealed, [GetInterestGroupVariant('ig_radicals',GetPlayer).GetName] suppressed and the old, moderate policy brought back.\n\n@warning! Those demands can shake the very foundations of modern Whiggery, and cause us to lose parliamentary support needed to sustain a #brightyellow Whig#! government! Placating them may not be worth the trouble.\n\n#lore Yes, Sir, this is the ludicrous combination of supports by which the right hon. Baronet is this night to be saved. How is he to be saved? By the Tories? Oh no! By the Whigs? Oh no! the genuine Whigs have not gone over yet.\n\nWhatever becomes of speculation for places where no negotiation has as yet been entered into — whatever becomes of future prospects, of difficulties got over and subdued, of kindness thrown out, and courtesies offered, and protection held over these unfortunate orphans — the Ministers as we call them — whatever becomes of their party, the true Whig, the true Reformer, the true friend of liberty will stand firm; and I doubt much that the right hon.\n\n— Daniel O'Connell, 1835#!"
+
+ bpm_supressed_interest_group: "Suppression of Cooperation with Radicals"
+
+ notification_bpm_radicals_withdraw_support_name: "Radicals Withdraw Support!"
+ notification_bpm_radicals_withdraw_support_desc: "After noticing the Whig's policy of odd moderation, the Radicals have withdrawn their support for [SCOPE.sCharacter('prime_minister').GetLastName]'s Government"
+
+ bpm_unstable_alliance_against_the_tories: "Shaky Alliance Against the Tories"
+ radicals_might_abandon_you: "[GetInterestGroupVariant('ig_radicals',GetPlayer).GetNameWithCountryVariant] may find the government's policy antagonistic, and may end their support for the [concept_government]!"
+
+ bpm_supress_the_radicals_name: "Suppress Cooperation"
+
+ je_bpm_has_repealed_the_compact: "Repealed the #gold Lichfield House Compact#!, ending the electoral alliance with the [GetInterestGroupVariant('ig_agrarian_populists',GetPlayer).GetName]"
+
+ je_bpm_has_given_a_cabinet_position_to_conservatives: "Has given a [Concept('concept_bpm_cabinet', 'Cabinet Position')] to at least one [GetInterestGroupVariant('ig_conservatives',GetPlayer).GetNameWithCountryVariant]"
+
+
+ bpm_brtish_events.2.t: "End of the Beginning"
+ bpm_brtish_events.2.d: "With recent #brightyellow Whig#! policy of suppression of very radical ideas, mildly moderate minor reforms and general coldness between the [GetInterestGroupVariant('ig_radicals',GetPlayer).GetName] and the [GetInterestGroupVariant('ig_liberals',GetPlayer).GetName], some have begun to perceive the current coalition of anti-Toryism as disillusioning. And now, [SCOPE.sCharacter('radical_leader_bpm').GetLastName] has openly criticized the [concept_government], and begun to talk with other Radicals to persuade them to stop their support."
+ bpm_brtish_events.2.f: "Liberty is on the march, and this year promises to be a great year in European history. Our Government is blind enough, and the Parliamentary majorities are more regarded than opinion out of doors. We must have another League of some kind, and our aristocracy must be made to submit again.\n\n— John Bright, 1848 "
+ bpm_brtish_events.2.a: "[SCOPE.sCharacter('radical_leader_bpm').GetFullName] is not so bright, is he?"
+
+ bpm_je_departure_of_the_derby_dilly: "5 years have passed, and the [GetInterestGroupVariant('ig_conservatives',GetPlayer).GetName] has fully given up its Whiggery"
+ ig_derby_dillies_on_the_side_of_tories: "[GetInterestGroupVariant('ig_conservatives',GetPlayer).GetName] have joined the #blue Conservative#! [concept_party."
+ 
+ ig_old_whigs_on_our_side: "[GetInterestGroupVariant('ig_conservatives',GetPlayer).GetName] have fully retreated back to the #brightyellow Whig#! [concept_party]."
+
+ bpm_brtish_events.3.t: "Gliding Away"
+ bpm_brtish_events.3.d: "After years of political lonelyness and uncertainty, the last of the [GetInterestGroupVariant('ig_conservatives',GetPlayer).GetNameWithCountryVariant] have finally, fully, left for the Conservative Party.\n\nInitially disliked by [GetInterestGroupVariant('ig_reactionaries',GetPlayer).GetName] and [SCOPE.sCharacter('peel_himself').GetFullName] himself, while also abandoned by the modernizing [GetInterestGroupVariant('ig_liberals',GetPlayer).GetName], all members of the Derby Dilly have cuddled up to the opposing party."
+ bpm_brtish_events.3.f: "What are we to call that section of the House to which the right hon. Baronet alluded, and over which the noble Lord (Stanley) presides? It is not a party — that he denies; it is not a faction — that would be a harsher title. I will give it a name — we ought to call it the tail.\n\n— Daniel O'Connell, 1835"
+ bpm_brtish_events.3.a: "Weak, 'traditionalist' splinters? They're gonna dissapear soon anwyay."
+
+ bpm_brtish_events.4.t: "The Conservative Whigs"
+ bpm_brtish_events.4.d: "With the reinvigoration of the Grand Whig spirit of old and the resulting change in policy of the #brightyellow Whig#! government, many troubled members of the [GetInterestGroupVariant('ig_conservatives',GetPlayer).GetName] have returened from their foolish-independent positions and closeness to the Conservative party.\n\nSatisfied with the moderate policy, tand o contrast themselves from the more liberal-minded Whigs, they have accepted the label #blue Conservative Whigs#!."
+ bpm_brtish_events.4.f: "So down thy hill, romantic Ashboun, glides\nThe Derby dilly, carrying Three INSIDES.\nOne in each corner sits, and lolls at ease,\nWith folded arms, propt back, and outstretch'd knees;\nWhile the press'd Bodkin, punch'd and squeezed to death,\nSweats in the midmost place, and scolds, and pants for breath.\n\n— #italic The Loves of the Triangle#! in #italic The Anti-Jacobin#!, 1798"
+ bpm_brtish_events.4.a: "Very well."
 
  ###### Journal Entries: Irish Matters
 
@@ -63,7 +124,7 @@
  je_bpm_irish_matters_status: "Deal with the Irish Question."
 
  bpm_pass_the_tithe_rentcharge_act_name: "Objective: End the Tithe War"
- bpm_pass_the_tithe_rentcharge_act_desc: "The so-called 'Tithe War' has been going on for a few years now. Filled with unloyalty to the Crown through refusal to pay the tithe for the upkeep of the Anglican Church of Ireland, it was also suplemented by violent encounters whenever authorities tried to ensure payment. Violence and money lost caused by the War must finally end, and the tithes reduced and reformed.\n\nThe following requirements must be met to finish this objective."
+ bpm_pass_the_tithe_rentcharge_act_desc: "The so-called 'Tithe War' has been going on for a few years now. Filled with unloyalty to the Crown through refusal to pay the tithe for the upkeep of the Anglican Church of Ireland, it was also suplemented by violent encounters whenever authorities tried to ensure payment. Violence and money lost caused by the War must finally end, and the tithes reduced and reformed.\n\nThe following requirements must be met to finish this objective:"
 
  william_4_dead: "King William IV of Hanover has died"
 
@@ -74,3 +135,8 @@
 
  bpm_tithe_war_ireland_modifier: "Tithe War"
  bpm_tithe_rentcharge_act_modifier: "Tithe Rentcharge Act"
+
+ Knatchbull: "Knatchbull"
+ O-Connel: "O'Connell"
+
+ Attwood: "Attwood"

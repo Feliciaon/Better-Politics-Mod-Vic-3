@@ -51,3 +51,145 @@ bpm_brtish_events.1 = { # Tithe Rentcharge Act 1838
 		}
 	}
 }
+
+bpm_brtish_events.2 = { # Radicals withdraw support for the Whig government.
+
+	type = country_event
+
+	dlc = dlc_bpm
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	title = bpm_brtish_events.2.t
+	desc = bpm_brtish_events.2.d
+	flavor = bpm_brtish_events.2.f
+
+	duration = 3
+
+	cooldown = {
+		years = 100
+	}
+
+	trigger = {
+		in_election_campaign = yes
+		has_variable = bpm_radicals_discontent
+	}
+
+	immediate = {
+		post_notification = bpm_radicals_withdraw_support
+
+		ig:ig_liberals = {
+			leader = {
+				save_temporary_scope_as = prime_minister_bpm
+			}
+		}
+		ig:ig_radicals = {
+			leader = {
+				save_temporary_scope_as = radical_leader_bpm
+			}
+		}
+	}
+
+	option = {
+		name = bpm_brtish_events.2.a
+		
+		default_option = yes
+	}
+}
+
+bpm_brtish_events.3 = { # Derby Dilly left
+
+	type = country_event
+
+	dlc = dlc_bpm
+
+	event_image = {
+		video = "unspecific_politicians_arguing"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_election.dds"
+
+	title = bpm_brtish_events.3.t
+	desc = bpm_brtish_events.3.d
+	flavor = bpm_brtish_events.3.f
+
+	duration = 3
+
+	cooldown = {
+		years = 100
+	}
+
+	trigger = {
+		
+	}
+
+	immediate = {
+		set_variable = bpm_derby_dilly_left
+		ig:ig_market_liberals = {
+			leader = {
+				save_temporary_scope_as = peel_himself
+			}
+		}
+	}
+
+	option = {
+		name = bpm_brtish_events.3.a
+		default_option = yes
+
+		custom_tooltip = {
+			text = ig_derby_dillies_on_the_side_of_tories
+			bpm_rename_igs = yes
+		}
+	}
+}
+
+bpm_brtish_events.4 = { # Conservative Whigs kept
+
+	type = country_event
+
+	dlc = dlc_bpm
+
+	event_image = {
+		video = "unspecific_ruler_speaking_to_people"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	title = bpm_brtish_events.4.t
+	desc = bpm_brtish_events.4.d
+	flavor = bpm_brtish_events.4.f
+
+	duration = 3
+
+	cooldown = {
+		years = 100
+	}
+
+	trigger = {
+		
+	}
+
+	immediate = {
+		set_variable = bpm_old_whigs_won_over
+	}
+
+	option = {
+		name = bpm_brtish_events.4.a
+		default_option = yes
+
+		custom_tooltip = {
+			text = ig_old_whigs_on_our_side
+			bpm_rename_igs = yes
+		}
+	}
+}

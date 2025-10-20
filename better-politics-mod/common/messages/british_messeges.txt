@@ -1,0 +1,9 @@
+bpm_radicals_withdraw_support = {
+	type = country
+	days = 28
+
+	texture = "gfx/interface/icons/notification_icons/interest_group.dds"
+
+	notification_type = toast
+	color = neutral
+}

@@ -12,6 +12,31 @@ bpm_rename_british_debug_ig = {
 		}
 		ig:ig_conservatives ?= { set_interest_group_name = ig_derby_dillies }
 	}
+	else_if = {
+		limit = { ### Old Whigs
+			this = c:GBR 
+			has_variable = bpm_old_whigs_won_over
+		}
+		ig:ig_conservatives ?= { set_interest_group_name = ig_conservative_whigs }
+	}
+	else_if = {
+		limit = { ### Tories
+			this = c:GBR 
+			has_variable = bpm_derby_dilly_left
+			NOT = {
+				has_variable = bpm_corn_laws_debate_active
+			}
+		}
+		ig:ig_conservatives ?= { set_interest_group_name = ig_tories }
+	}
+	else_if = {
+		limit = { ### Protectionists
+			this = c:GBR 
+			has_variable = bpm_derby_dilly_left
+			has_variable = bpm_corn_laws_debate_active
+		}
+		ig:ig_conservatives ?= { set_interest_group_name = ig_protectionists }
+	}
 	if = {
 		limit = { ### Whig Faction
 			this = c:GBR 
