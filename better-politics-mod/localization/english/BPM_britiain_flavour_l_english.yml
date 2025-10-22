@@ -91,6 +91,7 @@
  radicals_might_abandon_you: "[GetInterestGroupVariant('ig_radicals',GetPlayer).GetNameWithCountryVariant] may find the government's policy antagonistic, and may end their support for the [concept_government]!"
 
  bpm_supress_the_radicals_name: "Suppress Cooperation"
+ bpm_supress_the_radicals_desc: "Our relations with our 'allies', that being the so-called Radicals, have not been so great. Even if we have certain ideas and enemies in common, specific things vary greatly. Another thing is the rising influence of radical philosophy, and ideas like lay appropriation of Church of Ireland funds, are of great danger to a stable Whig government, as allies, such as the Derby Dilly, are increasingly joining the Tories. If we want to stay strong and actually united, we must curb cooperation and spread of inter-factional, radical ideas."
 
  je_bpm_has_repealed_the_compact: "Repealed the #gold Lichfield House Compact#!, ending the electoral alliance with the [GetInterestGroupVariant('ig_agrarian_populists',GetPlayer).GetName]"
 
@@ -125,6 +126,8 @@
 
  bpm_pass_the_tithe_rentcharge_act_name: "Objective: End the Tithe War"
  bpm_pass_the_tithe_rentcharge_act_desc: "The so-called 'Tithe War' has been going on for a few years now. Filled with unloyalty to the Crown through refusal to pay the tithe for the upkeep of the Anglican Church of Ireland, it was also suplemented by violent encounters whenever authorities tried to ensure payment. Violence and money lost caused by the War must finally end, and the tithes reduced and reformed.\n\nThe following requirements must be met to finish this objective:"
+
+ bpm_curb_the_orange_lodges_name: "Objective: Curb the Orangemen"
 
  william_4_dead: "King William IV of Hanover has died"
 

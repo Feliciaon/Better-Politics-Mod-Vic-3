@@ -38,7 +38,7 @@
 
 		OR = {
 			ig:ig_liberals ?= {
-				is_powerful = yes
+				ig_clout >= 0.25
 			}
 			ig:ig_radicals ?= {
 				ig_clout <= 0.05
@@ -156,6 +156,7 @@ je_bpm_irish_matters = {
 	}
 
 	scripted_button = bpm_pass_the_tithe_rentcharge_act
+	scripted_button = bpm_curb_the_orange_lodges
 
 	complete = {
 		

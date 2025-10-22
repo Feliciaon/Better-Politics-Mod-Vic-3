@@ -65,6 +65,10 @@ bpm_supress_the_radicals = {
 				party = { is_party_type = liberal_party }
 			}
 		}
+		custom_tooltip = {
+			text = je_bpm_has_repealed_the_compact
+			has_variable = bpm_repealed_lichfield_compact
+		}
 	}
 
 	effect = {
@@ -147,5 +151,36 @@ bpm_pass_the_tithe_rentcharge_act = {
 				is_decaying = no
 			}
 		}
+	}
+}
+
+bpm_curb_the_orange_lodges = {
+	name = "bpm_curb_the_orange_lodges_name"
+	desc = "bpm_curb_the_orange_lodges_desc"
+
+	visible = {
+    	exists = c:GBR
+		root = c:GBR
+		NOT = { has_variable = bpm_curbed_the_orange_lodges }
+	}
+
+	possible = {
+		institution_investment_level = {
+			institution = institution_home_affairs
+			value >= 2
+		}
+		institution_investment_level = {
+			institution = institution_police
+			value >= 3
+		}
+		has_law = law_type:law_repeatable_religion_promote_secular_values
+		has_law = law_type:law_repeatable_politics_anti_corruption_drive
+		hidden_trigger = {
+			always = no
+		}
+	}
+
+	effect = {
+		
 	}
 }
