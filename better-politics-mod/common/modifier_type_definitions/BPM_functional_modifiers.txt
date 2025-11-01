@@ -406,6 +406,10 @@ country_bpm_base_mandate_add = {
 	}
 }
 
+country_bpm_low_rigidity_no_econ_debuff = {
+	color=good
+	boolean=yes
+}
 
 ### Synergy Modifiers
 
@@ -454,6 +458,13 @@ country_liberal_movement_support_add = {
 	color=good
 }
 
+character_bpm_risk_taking = {
+	decimals=0
+	color=neutral
+	game_data={
+		ai_value=0
+	}
+}
 # Consciousness
 
 country_labor_consciousness_change_add = {
@@ -464,6 +475,25 @@ country_labor_consciousness_change_add = {
 country_liberal_consciousness_change_add = {
 	decimals=2
 	color=good
+}
+
+character_bpm_risk_taking = {
+	decimals=0
+	color=neutral
+	game_data={
+		ai_value=0
+	}
+}
+
+### Revolutions
+country_bpm_revolutionary_damage_efficiency_add = {
+	decimals=1
+	percent=yes
+}
+
+country_bpm_revolutionary_damage_base_cost_add = {
+	decimals=0
+	color=bad
 }
 
 country_bpm_labor_consciousness_target_mult = {

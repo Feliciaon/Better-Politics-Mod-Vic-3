@@ -15,6 +15,8 @@
 
 	modifier = {
 		interest_group_ig_landowners_pol_str_mult = 0.1
+		country_bpm_auth_authority_per_bureaucracy_add = 0.1
+		country_bpm_auth_exhaustion_recovery_from_aristocrat_ig = 5
 	}
 
 	# AI shouldn't try to abolish institutions
@@ -42,8 +44,9 @@ law_local_police = {
 	}
 
 	modifier = {
+		country_bpm_auth_exhaustion_recovery_from_bureaucratic_ig = 5
 		country_populist_movement_support_add = 0.05
-	}
+=	}
 	
 	progressiveness = 50
 
@@ -54,6 +57,7 @@ law_local_police = {
 		interest_group_ig_intelligentsia_pol_str_mult = 0.05
 		country_rigidity_baseline_add = 2
 		country_rigidity_rate_add = 0.05
+		country_bpm_auth_authority_per_bureaucracy_add = 0.05
 	}
 
 #	pop_support = {
@@ -146,6 +150,8 @@ law_dedicated_police = {
 
 	modifier = {
 		country_institution_police_max_investment_add = 2
+		country_bpm_auth_exhaustion_recovery_from_bureaucratic_ig = 5
+		country_bpm_auth_authority_per_bureaucracy_add = 2
 	}
 
 	institution = institution_police
@@ -157,6 +163,7 @@ law_dedicated_police = {
 		interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.05
 		country_rigidity_baseline_add = 2
 		country_rigidity_rate_add = 0.1
+		country_bpm_auth_authority_per_bureaucracy_add = 0.1
 	}
 
 	can_impose = {
@@ -260,6 +267,7 @@ law_militarized_police = {
 
 	modifier = {
 		country_institution_police_max_investment_add = 3
+		country_bpm_auth_exhaustion_recovery_from_military_ig = 25
 	}
 
 	institution = institution_police
@@ -271,6 +279,7 @@ law_militarized_police = {
 		interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.1
 		country_rigidity_baseline_add = 4
 		country_rigidity_rate_add = 0.2
+		country_bpm_auth_authority_per_bureaucracy_add = 0.4
 	}
 
 	can_impose = {
@@ -360,6 +369,9 @@ law_elected_police = {
 	modifier = {
 		country_institution_police_max_investment_add = 2
 		country_leverage_resistance_mult = 0.25
+		country_bpm_auth_restores_order = yes
+		country_bpm_auth_oppressive_decrees_disabled = yes
+		country_bpm_auth_exhaustion_recovery_from_governing_ig = 10
 	}
 
 	institution = institution_police
@@ -368,6 +380,8 @@ law_elected_police = {
 		state_pop_pol_str_add = 1
 		country_institution_size_change_speed_mult = 0.05
 		country_rigidity_rate_add = 0.1
+		country_bpm_auth_authority_per_bureaucracy_add = 0.025
+		state_bpm_auth_radicals_removed_weekly = 0.001
 	}
 
 #	pop_support = {

@@ -18,6 +18,21 @@
 	bpm_cache_country_variables_half_yearly_effect = yes
 	bpm_setup_foundation_laws = yes
 	bpm_trend_party_establishment = yes
+	bpm_auth_handle_authority_from_extra_sources = yes
+	bpm_setup_codification = yes
+	add_journal_entry = {
+		type = je_bpm_cabinet_agendas
+	}
+	bpm_setup_ig_organization = yes
+}
+
+bpm_setup_ig_organization = {
+	every_interest_group = {
+		set_variable = {
+			name = bpm_ig_organization
+			value = 0
+		}
+	}
 }
 
 bpm_earlier_setup_country = {
@@ -37,11 +52,11 @@ bpm_setup_cabinet = {
     }
     set_variable = {
         name = bpm_cab_synergy
-        value = 1
+        value = 0
     }
 	set_variable = {
 		name = bpm_cab_hoshog_synergy
-		value = 1
+		value = 0
 	}
 	if = {
 		limit = {

@@ -12,6 +12,7 @@
 		country_authority_mult = 0.25
 		country_law_enactment_time_mult = -0.1
 		country_bpm_base_mandate_add = 100
+		country_bpm_auth_exhaustion_recovery_from_bureaucratic_ig = 10
 
 		country_synergy_base_add = -30
 		country_synergy_from_rigidity_add = 40
@@ -19,6 +20,7 @@
 
     disallowing_laws = {
         law_oligarchy
+		law_anarchy
     }
 
 	on_activate = {
@@ -59,6 +61,8 @@ law_separated_powers = {
 		interest_group_ig_petty_bourgeoisie_pol_str_mult = 0.25
 		country_legitimacy_headofstate_add = 10
 		country_bpm_base_mandate_add = 80
+		country_bpm_auth_exhaustion_recovery_from_governing_ig = 5
+		country_bpm_auth_exhaustion_recovery_from_bureaucratic_ig = 5
 		#state_tax_capacity_mult = 0.25
 
 		country_synergy_base_add = -10
@@ -70,6 +74,10 @@ law_separated_powers = {
         law_landed_voting
         law_census_voting
         law_universal_suffrage
+    }
+
+    disallowing_laws = {
+		law_anarchy
     }
 
 	on_activate = {
@@ -130,6 +138,7 @@ law_supreme_legislature = {
 		state_pop_pol_str_add = 1
 		country_law_enactment_time_mult = -0.1
 		country_bpm_base_mandate_add = 60
+		country_bpm_auth_exhaustion_recovery_from_governing_ig = 10
 
 		country_synergy_from_rigidity_add = 20
 	}

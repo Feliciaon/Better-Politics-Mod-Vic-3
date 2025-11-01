@@ -285,7 +285,7 @@ movement_labor = { # Explicitly non-socialist labour movement
 	
 	revolution = {
 		possible = {
-			political_movement_support >= 0.1
+		    always = no		political_movement_support >= 0.1
 		}
 		
 		weight = {
@@ -297,9 +297,10 @@ movement_labor = { # Explicitly non-socialist labour movement
 		}
 	}
 	
-	secession = {
-		possible = {
-			always = no
+      	secession = {
+		possible = { 
+                          always = no 
+                         always = no
 		}
 		
 		weight = {
@@ -772,7 +773,7 @@ movement_socialist = {
 	
 	revolution = {
 		possible = {
-			political_movement_support >= 0.1
+		    always = no		political_movement_support >= 0.1
 			owner.var:bpm_consciousness_labor >= 25
 		}
 		
@@ -800,9 +801,10 @@ movement_socialist = {
 		}
 	}
 	
-	secession = {
-		possible = {
-			always = no
+      	secession = {
+		possible = { 
+                          always = no 
+                         always = no
 		}
 		
 		weight = {
@@ -1267,12 +1269,11 @@ movement_anarchist = {
 	
 	revolution = {
 		possible = {
-			political_movement_support >= 0.3
-			owner.var:bpm_consciousness_labor >= 50
+		    always = no
 		}
 
 		interest_group_can_join = {
-			bpm_ig_is_anarchist = yes
+			always = no
 		}
 		
 		weight = {
@@ -1281,9 +1282,8 @@ movement_anarchist = {
 	}
 	
 	secession = {
-		possible = {
-			political_movement_support >= 0.5
-			scope:clout <= 0
+		possible = { 
+			always = no 
 		}
 
 		interest_group_can_join = {
@@ -1372,7 +1372,6 @@ movement_communist = {
 	}
 
 	can_pressure_interest_group = { 		bpm_ig_is_proletarian = yes }
-    interest_group_can_join = { 		bpm_ig_is_proletarian = yes }
 		
 	character_support_trigger = {
 		OR = {
@@ -1698,12 +1697,11 @@ movement_communist = {
 	
 	revolution = {
 		possible = {
-			political_movement_support >= 0.1
-			owner.var:bpm_consciousness_labor >= 50
+		    always = no
 		}
 
 		interest_group_can_join = {
-			bpm_ig_is_party_socialist = yes
+			always = no
 		}
 		
 		weight = {
@@ -1711,13 +1709,13 @@ movement_communist = {
 		}	
 	}
 	
-	secession = {
-		possible = {
-			always = no
+    secession = {
+		possible = { 
+            always = no
 		}
 		
 		weight = {
-			value = 1000
+			value = 0
 		}		
 	}	
 	
@@ -2116,7 +2114,7 @@ movement_reformist_socialist = {
 	
 	revolution = {
 		possible = {
-			# these guys explicitly oppose revolution
+		    bpm_movement_can_revolt = yes			# these guys explicitly oppose revolution
 			always = no
 		}
 		
@@ -2141,8 +2139,8 @@ movement_reformist_socialist = {
 	}
 	
 	secession = {
-		possible = {
-			always = no
+		possible = { 
+			always = no 
 		}
 		
 		weight = {

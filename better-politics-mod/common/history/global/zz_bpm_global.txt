@@ -33,6 +33,23 @@
 	}
 
 	every_country = {
+		limit = { 
+			has_law = law_type:law_total_separation 
+		}
+		if = {
+			limit = { 
+				OR = {
+					this ?= c:USA # Allegedly they were actually secular. Fixing state religion for them
+				}
+			}
+			set_state_religion = rel:atheist
+		} else = {
+			activate_law = law_type:law_freedom_of_conscience # Other countries will need to prove secularity to fit in.
+		}
+	}
+
+	every_country = {
+		bpm_setup_front_org = yes
 		if = {
 			limit = {
 				country_is_in_europe = no
@@ -45,6 +62,13 @@
 	}
 
 	bpm_setup_global_laws_varlists = yes
+
+	bpm_set_hidden_journal_entry_groups = yes
+	bpm_setup_global_front_names = yes
+	add_to_global_variable_list = {
+		name = custom_button_list_flag
+		target = flag:bpm_gui_sidebar_icon
+	}
 
 	every_country = {
         bpm_update_exe_ideology = yes

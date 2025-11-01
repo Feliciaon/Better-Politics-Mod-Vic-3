@@ -16,6 +16,7 @@ bpm_reload_institution_modifiers = {
         remove_modifier = bpm_economy_cr_attraction_modifier
         remove_modifier = bpm_number_of_cabinet_picks
         remove_modifier = bpm_expected_a_cabinet_pick
+        remove_modifier = bpm_hog_approval_bonus
         remove_modifier = bpm_hog_attraction_modifier
         set_variable = {
             name = bpm_number_of_cabpicks
@@ -65,24 +66,24 @@ bpm_reload_institution_modifiers = {
         }
     }
 
-    every_interest_group = {
-        limit = { has_variable = bpm_number_of_cabpicks }
-        if = {
-            limit = { 
-                var:bpm_number_of_cabpicks > 0
-            }
-            add_modifier = {
-                name = bpm_number_of_cabinet_picks
-            }
-        }
-        # if = {
-        #     limit = {
-        #         var:bpm_number_of_cabpicks ?= 0
-        #         is_in_government = yes
-        #     }
-        #     add_modifier = bpm_expected_a_cabinet_pick
-        # }
-    }
+    # every_interest_group = {
+    #     limit = { has_variable = bpm_number_of_cabpicks }
+    #     if = {
+    #         limit = { 
+    #             var:bpm_number_of_cabpicks > 0
+    #         }
+    #         add_modifier = {
+    #             name = bpm_number_of_cabinet_picks
+    #         }
+    #     }
+    #     # if = {
+    #     #     limit = {
+    #     #         var:bpm_number_of_cabpicks ?= 0
+    #     #         is_in_government = yes
+    #     #     }
+    #     #     add_modifier = bpm_expected_a_cabinet_pick
+    #     # }
+    # }
 
     bpm_reload_cabinet_max_level_from_skill = yes
 
@@ -1587,7 +1588,7 @@ bpm_reload_institution_modifiers_culture = {
                     }
                 }
             }
-            add_modifier = bpm_number_of_cabinet_picks
+           # add_modifier = bpm_number_of_cabinet_picks
         }
     }
 }
@@ -2035,7 +2036,7 @@ bpm_reload_institution_modifiers_diplomacy = {
                 name = bpm_number_of_cabpicks
                 add = 1
             }
-            add_modifier = bpm_number_of_cabinet_picks
+           # add_modifier = bpm_number_of_cabinet_picks
         }
     }
 }
@@ -2197,7 +2198,7 @@ bpm_reload_institution_modifiers_economy_noncr = {
                 name = bpm_number_of_cabpicks
                 add = 1
             }
-            add_modifier = bpm_number_of_cabinet_picks
+            #add_modifier = bpm_number_of_cabinet_picks
         }
     }
 }
@@ -2360,7 +2361,7 @@ bpm_reload_institution_modifiers_economy_cr = {
                 name = bpm_number_of_cabpicks
                 add = 1
             }
-            add_modifier = bpm_number_of_cabinet_picks
+           # add_modifier = bpm_number_of_cabinet_picks
         }
     }
 }
@@ -2604,18 +2605,40 @@ bpm_remove_institution_modifiers_schools = {
         limit = {
             bpm_cab_synergy_value >= 80
         }
-        add_modifier = bpm_high_synergy_modifier
+        add_modifier = {
+            name = bpm_high_synergy_modifier
+            multiplier = bpm_cab_synergy_value_high_abv
+        }
     }
     else_if = {
         limit = {
             bpm_cab_synergy_value >= 60
         }
-        add_modifier = bpm_mid_synergy_modifier
+        add_modifier = {
+            name = bpm_mid_synergy_modifier
+            multiplier = bpm_cab_synergy_value_mid_abv
+        }
     }
     else = {
-        add_modifier = bpm_low_synergy_modifier
+        add_modifier = {
+            name = bpm_low_synergy_modifier
+            multiplier = bpm_cab_synergy_value_low_abv
+        }
     }
 
+    every_interest_group = {
+        limit = {
+            has_modifier = bpm_hog_approval_bonus
+        }
+        remove_modifier = bpm_hog_approval_bonus
+    }
+
+    random_interest_group = {
+        limit = {
+            owner.var:bpm_headofgov = leader
+        }
+        add_modifier = bpm_hog_approval_bonus
+    }
     if = {
         limit = {
             is_player = no

@@ -1,4 +1,10 @@
 ﻿l_english:
+ bpm_consciousness_liberal_change_universities_desc: "From Number of University Building Levels"
+ bpm_consciousness_liberal_change_trade_centers_desc: "From Number of Trade Center Building Levels"
+ bpm_consciousness_liberal_change_manor_houses_desc: "From Number of Manor House Building Levels"
+ bpm_consciousness_liberal_change_literacy_rate_desc: "From Literacy Rate"
+ bpm_consciousness_liberal_change_modifier_desc: "From Modifiers"
+ BPM_LIBERAL_CONSCIOUSNESS: "Liberal Consciousness of [GetPlayer.MakeScope.Var('bpm_consciousness_liberal').GetValue)|v1]"
  bpm_consciousness_labor_change_modifier_desc: "Modifiers"
  bpm_consciousness_labor_change_legalized_labor_unions_desc: "Popularity of Labor Unions"
  bpm_consciousness_labor_change_limited_labor_unions_desc: "Popularity of Labor Unions"

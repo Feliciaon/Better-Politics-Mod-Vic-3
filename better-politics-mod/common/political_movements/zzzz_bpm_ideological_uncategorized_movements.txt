@@ -269,7 +269,7 @@ movement_anti_slavery = {
 
 	revolution = {
 		possible = {
-			political_movement_support >= 0.15
+		    always = no		political_movement_support >= 0.15
 		}
 		
 		weight = {
@@ -323,9 +323,10 @@ movement_anti_slavery = {
 		}
 	}
 
-	secession = {
-		possible = {
-			political_movement_support >= 0.15
+      	secession = {
+		possible = { 
+                          always = no 
+                         political_movement_support >= 0.15
 			OR = {
 				scope:clout <= 0
 				owner = {
@@ -682,7 +683,7 @@ movement_pro_slavery = {
 	
 	revolution = {
 		possible = {
-			political_movement_support >= 0.15
+		    always = no		political_movement_support >= 0.15
 		}
 			
 		weight = {
@@ -736,9 +737,10 @@ movement_pro_slavery = {
 		}
 	}
 	
-	secession = {
-		possible = {
-			political_movement_support >= 0.15
+      	secession = {
+		possible = { 
+                          always = no 
+                         political_movement_support >= 0.15
 			OR = {
 				scope:clout <= 0
 				owner = {
@@ -1303,7 +1305,7 @@ movement_positivist = {
 	
 	revolution = {
 		possible = {
-			political_movement_support >= 0.15
+		    always = no		political_movement_support >= 0.15
 		}
 		
 		weight = {
@@ -1322,9 +1324,10 @@ movement_positivist = {
 		}
 	}
 	
-	secession = {
-		possible = {
-			always = no
+      	secession = {
+		possible = { 
+                          always = no 
+                         always = no
 		}
 		
 		weight = {
@@ -1549,7 +1552,7 @@ movement_utilitarian = {
 
 	revolution = {
 		possible = {
-			political_movement_support >= 0.15
+		    always = no		political_movement_support >= 0.15
 		}	
 	
 		weight = {
@@ -1586,9 +1589,10 @@ movement_utilitarian = {
 		}
 	}
 	
-	secession = {
-		possible = {
-			always = no
+      	secession = {
+		possible = { 
+                          always = no 
+                         always = no
 		}
 		
 		weight = {
@@ -1912,7 +1916,7 @@ movement_land_reform = {
 	
 	revolution = {
 		possible = {
-			political_movement_support >= 0.15
+		    always = no			political_movement_support >= 0.15
 		}
 		
 		weight = {
@@ -1939,9 +1943,10 @@ movement_land_reform = {
 		}
 	}
 	
-	secession = {
-		possible = {
-			always = no
+      	secession = {
+		possible = { 
+                          always = no 
+                         always = no
 			# political_movement_support >= 0.15
 			# OR = {
 			# 	scope:clout <= 0
