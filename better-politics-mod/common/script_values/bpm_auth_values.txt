@@ -4,12 +4,36 @@ bpm_total_state_capacity = {
 	add = var:bpm_auth_state_exhaustion
 }
 
+bpm_state_capacity_percentage = {
+	value = bpm_state_capacity
+	divide = bpm_total_state_capacity
+}
+
 bpm_auth_state_exhaustion_rate = {
 	value = 0
 
 	add = bpm_auth_weekly_state_exhaustion_increase
 
 	subtract = bpm_auth_weekly_state_exhaustion_recovery
+}
+
+bpm_auth_state_exhaustion_increase_incomplete_mandate = {
+	if = {
+		limit = {
+			has_variable = bpm_electoral_mandate_progress
+			has_variable = bpm_electoral_mandate_time_progress
+		}
+		value = var:bpm_electoral_mandate_progress
+		subtract = {
+			value = var:bpm_electoral_mandate_time_progress
+			divide = 12
+			floor = yes
+		}
+	}
+	else = {
+		value = 0
+	}
+
 }
 
 bpm_auth_weekly_state_exhaustion_recovery_percentage = {
@@ -293,6 +317,15 @@ bpm_auth_weekly_state_exhaustion_increase = {
 		}
 	}
 
+	add = {
+		value = bpm_auth_state_exhaustion_increase_incomplete_mandate
+		multiply = {
+			value = bpm_total_state_capacity
+			divide = 500
+		}
+		desc = "BPM_EXHAUSTION_FROM_INCOMPLETE_MANDATE"
+	}
+
 }
 
 bpm_auth_weekly_state_exhaustion_increase_state_collapse = {
@@ -441,54 +474,54 @@ bpm_auth_decree_count_in_state = {
 		limit = {
 			has_decree = decree_road_maintenance
 		}
-		add = 5
+		add = 1
 	}
 	if = {
 		limit = {
 			has_decree = decree_violent_suppression
 		}
-		add = 10
+		add = 2
 	}
 	if = {
 		limit = {
 			has_decree = decree_promote_social_mobility
 		}
-		add = 25
+		add = 5
 	}
 	if = {
 		limit = {
 			has_decree = decree_promote_national_values
 		}
-		add = 20
+		add = 4
 	}
 	if = {
 		limit = {
 			has_decree = decree_encourage_manufacturing_industry
 		}
-		add = 10
+		add = 2
 	}
 	if = {
 		limit = {
 			has_decree = decree_encourage_agricultural_industry
 		}
-		add = 10
+		add = 2
 	}
 	if = {
 		limit = {
 			has_decree = decree_encourage_resource_industry
 		}
-		add = 10
+		add = 2
 	}
 	if = {
 		limit = {
 			has_decree = decree_greener_grass_campaign
 		}
-		add = 20
+		add = 4
 	}
 	if = {
 		limit = {
 			has_decree = decree_enlistment_efforts
 		}
-		add = 15
+		add = 3
 	}
 }
