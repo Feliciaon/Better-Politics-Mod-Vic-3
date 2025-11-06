@@ -66,10 +66,18 @@ gbr_liberal_party_name = {
 
 	text = {
 		trigger = {
-			game_date < 1859.1.1
+			has_variable = bpm_lichfield_house_compact
 		}
-		localization_key = party_gbr_whigs
+		localization_key = party_gbr_lichfield
 	}
+
+	text = {
+		trigger = {
+			NOT = { has_variable = bpm_lichfield_house_compact }
+		}
+		localization_key = party_gbr_whigs_and_allies
+	}
+
 	text = {
 		trigger = {
 			game_date > 1859.1.1

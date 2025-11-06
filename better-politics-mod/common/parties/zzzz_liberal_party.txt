@@ -1343,12 +1343,8 @@ liberal_party = {
 				else_if = { # Irish Repealers had an electoral-political alliance with the Whigs
 					limit = {
 						is_interest_group_type = ig_agrarian_populists
-						owner = { 
-							NOR = {
-								has_variable = bpm_independent_irish_party_appeared
-								has_variable = bpm_repealed_lichfield_compact
-								has_variable = bpm_oconnell_found_lichfield_disillusioning
-							}
+						owner = {
+							has_variable = bpm_lichfield_house_compact
 						}
 					}
 					add = {

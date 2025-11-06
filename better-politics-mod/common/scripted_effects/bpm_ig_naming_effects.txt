@@ -56,9 +56,19 @@ bpm_rename_british_debug_ig = {
 	if = {
 		limit = {
 			this = c:GBR 
-			always = yes
+			NOT = {
+				has_variable = bpm_liberal_party_created
+			}
 		}
 		ig:ig_market_liberals ?= { set_interest_group_name = ig_peelites }
+	}
+
+	else_if = {
+		limit = {
+			this = c:GBR 
+			has_variable = bpm_liberal_party_created
+		}
+		ig:ig_market_liberals ?= { set_interest_group_name = ig_gladstonian_liberals }
 	}
 
 	if = {
@@ -80,7 +90,17 @@ bpm_rename_british_debug_ig = {
 	if = {
 		limit = {
 			this = c:GBR 
-			always = yes
+			NOT = {
+				has_variable = bpm_liberal_party_created
+			}
+		}
+		ig:ig_national_liberals ?= { set_interest_group_name = ig_liberals_palmerston }
+	}
+
+	else_if = {
+		limit = {
+			this = c:GBR 
+			has_variable = bpm_liberal_party_created
 		}
 		ig:ig_national_liberals ?= { set_interest_group_name = ig_palmerstonian_liberals }
 	}
@@ -91,6 +111,14 @@ bpm_rename_british_debug_ig = {
 			always = yes
 		}
 		ig:ig_agrarian_populists ?= { set_interest_group_name = ig_irish_repealers }
+	}
+
+	if = {
+		limit = {
+			this = c:GBR 
+			always = yes
+		}
+		ig:ig_petty_bourgeoisie ?= { set_interest_group_name = ig_administrative_colonial_interests }
 	}
 }
 

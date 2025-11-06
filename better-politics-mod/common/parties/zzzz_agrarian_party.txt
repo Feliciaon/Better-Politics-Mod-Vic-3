@@ -413,9 +413,8 @@ agrarian_party = {
 			limit = {
 				owner = { 
 					this = c:GBR
-					OR = {
-						has_variable = bpm_repealed_lichfield_compact
-						has_variable = bpm_independent_irish_party_appeared
+					NOT = {
+						has_variable = bpm_lichfield_house_compact
 					}
 				}
 			}

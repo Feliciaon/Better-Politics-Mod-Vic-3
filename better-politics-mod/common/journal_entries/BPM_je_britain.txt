@@ -16,7 +16,9 @@
 	complete = {
 		custom_tooltip = {
 			text = je_bpm_has_repealed_the_compact
-			has_variable = bpm_repealed_lichfield_compact
+			NOT = {
+				has_variable = bpm_lichfield_house_compact
+			}
 		}
 
 		custom_tooltip = {
@@ -220,6 +222,91 @@ je_bpm_irish_matters = {
 	}
 
 	weight = 100
+
+	should_be_pinned_by_default = yes
+}
+
+je_bpm_repeal_and_peel = {
+	icon = "gfx/interface/icons/state_status_icons/has_devastation.dds"
+
+	group = je_group_historical_content
+
+	immediate = {
+		set_variable = {
+			name = bpm_conservative_party_unity_prog
+			value = -10
+		}
+	}
+
+	scripted_progress_bar = bpm_je_repeal_and_peel_progress_bar
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = bpm_je_party_low_collapse_looming_desc
+				trigger = {
+					var:bpm_conservative_party_unity_prog <= -20
+				}
+			}
+
+			triggered_desc = {
+				desc = bpm_je_party_unity_low_desc
+				trigger = {
+					var:bpm_conservative_party_unity_prog < -5
+				}
+			}
+
+			triggered_desc = {
+				desc = bpm_je_party_unity_average_desc
+				trigger = {
+					var:bpm_conservative_party_unity_prog >= -5
+				}
+			}
+
+			triggered_desc = {
+				desc = bpm_je_party_unity_high_desc
+				trigger = {
+					var:bpm_conservative_party_unity_prog >= 15
+				}
+			}
+
+			triggered_desc = {
+				desc = bpm_je_party_unity_absolute_desc
+				trigger = {
+					var:bpm_conservative_party_unity_prog >= 25
+				}
+			}
+		}
+	}
+
+	complete = {
+		
+	}
+
+	on_complete = {
+		
+	}
+
+	fail = {
+		
+	}
+
+	on_fail = {
+		
+	}
+
+	on_monthly_pulse = {
+		
+	}
+	on_weekly_pulse = {
+		events = {
+			
+		}
+	}
+
+	weight = 100
+
+	progressbar = yes
 
 	should_be_pinned_by_default = yes
 }

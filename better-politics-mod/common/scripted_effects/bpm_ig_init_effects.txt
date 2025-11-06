@@ -233,7 +233,7 @@ bpm_initialize_natlibs = {
 				}
 				add_ideology = ideology_sta_progressive_state
 			}
-			if = {
+			else_if = {
 				limit = {
 					ROOT = { 
 						this = c:GBR
