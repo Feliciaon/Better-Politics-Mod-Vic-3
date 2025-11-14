@@ -846,7 +846,7 @@ ideology_dop_aristocratic_democrat = {
 
 	lawgroup_legislative_principles = {
 		law_advisory_body = strongly_disapprove
-		law_separated_powers = approve
+		law_separated_powers = neutral
 		law_supreme_legislature = approve
 	}
 
@@ -883,7 +883,7 @@ ideology_dop_toryist = {
 	lawgroup_legislative_principles = {
 		law_advisory_body = disapprove
 		law_separated_powers = approve
-		law_supreme_legislature = disapprove
+		law_supreme_legislature = approve
 	}
 
 	lawgroup_labour_associations = {

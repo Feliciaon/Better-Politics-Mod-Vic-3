@@ -23,18 +23,8 @@
 
 		custom_tooltip = {
 			text = je_bpm_has_given_a_cabinet_position_to_conservatives
-			OR = {
-				var:bpm_minister_of_social_security.interest_group ?= ig:ig_conservatives
-				var:bpm_minister_of_colonial_affairs.interest_group ?= ig:ig_conservatives
-				var:bpm_minister_of_workplace_safety.interest_group ?= ig:ig_conservatives
-				var:bpm_minister_of_police.interest_group ?= ig:ig_conservatives
-				var:bpm_minister_of_health_system.interest_group ?= ig:ig_conservatives
-				var:bpm_minister_of_schools.interest_group ?= ig:ig_conservatives
-				var:bpm_minister_of_home_affairs.interest_group ?= ig:ig_conservatives
-				var:bpm_minister_of_centralization.interest_group ?= ig:ig_conservatives
-				var:bpm_minister_of_suffrage.interest_group ?= ig:ig_conservatives
-				var:bpm_minister_of_culture.interest_group ?= ig:ig_conservatives
-				var:bpm_minister_of_diplomacy.interest_group ?= ig:ig_conservatives
+			ig:ig_conservatives ?= {
+				var:bpm_expected_cabpos >= 2
 			}
 		}
 

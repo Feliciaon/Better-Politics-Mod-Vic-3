@@ -1216,6 +1216,18 @@ conservative_party = {
 						desc = "bpm_great_reform_act"
 					}
 				}
+				else_if = {
+					limit = {
+						is_interest_group_type = ig_conservatives
+						owner = {
+							NOT = { has_variable = bpm_derby_dilly_left }
+						}
+					}
+					add = {
+						value = -50
+						desc = "bpm_great_reform_act"
+					}
+				}
 			}
 			# Corn Laws Era? / Liberal Party Era
 			else_if = {

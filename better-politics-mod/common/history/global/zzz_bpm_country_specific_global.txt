@@ -262,6 +262,9 @@
 		activate_law = law_type:law_anti_strike_laws # Combination of Workingmen Act, 1825?
 
 		activate_law = law_type:law_no_health_system
+
+		activate_law = law_type:law_answers_to_legislature
+		activate_law = law_type:law_supreme_legislature
 		
 		ig:ig_market_liberals = {
 			add_ideology = ideology_exe_ceremonial
@@ -288,6 +291,7 @@
 
 		ig:ig_radicals = {
 			bpm_remove_all_gov_ideologies = yes
+			add_ideology = ideology_gov_moderate_monarchist
 			bpm_remove_all_dop_ideologies = yes
 			add_ideology = ideology_dop_moderate_democrat
 			bpm_remove_all_eco_ideologies = yes
