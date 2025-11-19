@@ -1297,7 +1297,7 @@ ideology_eco_centralized_economy = {
 }
 
 ideology_eco_aristocratic_laissez_faire = {
-	icon = "gfx/interface/icons/ideology_icons/eco_ideology/laissez_faire.dds"
+	icon = "gfx/interface/icons/ideology_icons/eco_ideology/aristocratic_laissez_faire.dds"
 	priority = 1000
     lawgroup_economic_system = {
 		law_traditionalism = strongly_disapprove
@@ -1350,7 +1350,7 @@ ideology_eco_aristocratic_laissez_faire = {
 }
 
 ideology_eco_aristocratic_modernizer = {
-	icon = "gfx/interface/icons/ideology_icons/eco_ideology/modernizer.dds"
+	icon = "gfx/interface/icons/ideology_icons/eco_ideology/aristocratic_modernizer.dds"
 	priority = 1000
     lawgroup_economic_system = {
 		law_traditionalism = strongly_disapprove

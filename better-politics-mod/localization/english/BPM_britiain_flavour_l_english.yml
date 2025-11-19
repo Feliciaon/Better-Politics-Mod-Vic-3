@@ -62,6 +62,9 @@
  ideology_dop_toryist: "Toryist"
  ideology_dop_toryist_desc: "#lore Opposing the recently introduced Great Reform Act, the Toryists seek to return to the times of old, or at least limit the impact of the reform.#!"
 
+ ideology_dop_british_liberal: "British Liberal"
+ ideology_dop_british_liberal_desc: "#lore Representing modern British liberal thought, this group believes in the principles of democracy curtailed by prudent limits, all to keep national politics rational and cultured.#!"
+
  ##### Modifiers:
 
  bpm_great_reform_act: "Aftermath of the Great Reform Act"

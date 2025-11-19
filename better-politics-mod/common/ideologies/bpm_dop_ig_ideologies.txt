@@ -825,7 +825,7 @@ ideology_dop_organic_power = {
 }
 
 ideology_dop_aristocratic_democrat = {
-	icon = "gfx/interface/icons/ideology_icons/dop_ideology/moderate_democrat.dds"
+	icon = "gfx/interface/icons/ideology_icons/dop_ideology/aristocratic_democrat.dds"
 	priority = 1000
 	lawgroup_distribution_of_power = {
 		law_autocracy = strongly_disapprove
@@ -834,7 +834,7 @@ ideology_dop_aristocratic_democrat = {
 		law_census_voting = disapprove
 		law_universal_suffrage = strongly_disapprove
 		law_anarchy = strongly_disapprove
-		law_colonial_admin = disapprove
+		#law_colonial_admin = disapprove
 		law_organic_democracy = strongly_disapprove
 	}
 
@@ -845,8 +845,8 @@ ideology_dop_aristocratic_democrat = {
 	}
 
 	lawgroup_legislative_principles = {
-		law_advisory_body = strongly_disapprove
-		law_separated_powers = neutral
+		law_advisory_body = disapprove
+		law_separated_powers = disapprove
 		law_supreme_legislature = approve
 	}
 
@@ -861,7 +861,7 @@ ideology_dop_aristocratic_democrat = {
 }
 
 ideology_dop_toryist = {
-	icon = "gfx/interface/icons/ideology_icons/dop_ideology/authoritarian_democrat.dds"
+	icon = "gfx/interface/icons/ideology_icons/dop_ideology/toryist.dds"
 	priority = 1000
     lawgroup_distribution_of_power = {
 		law_autocracy = approve
@@ -871,7 +871,7 @@ ideology_dop_toryist = {
 		law_universal_suffrage = strongly_disapprove
 		law_anarchy = strongly_disapprove
 		law_organic_democracy = disapprove
-		law_colonial_admin = disapprove
+		#law_colonial_admin = disapprove
 	}
 
     lawgroup_bureaucracy = {
@@ -882,7 +882,7 @@ ideology_dop_toryist = {
 
 	lawgroup_legislative_principles = {
 		law_advisory_body = disapprove
-		law_separated_powers = approve
+		law_separated_powers = neutral
 		law_supreme_legislature = approve
 	}
 
@@ -893,5 +893,41 @@ ideology_dop_toryist = {
 		law_right_to_associate = disapprove
 		law_socialist_labor_unions = strongly_disapprove
 		law_syndicalism = strongly_disapprove
+	}
+}
+
+ideology_dop_british_liberal = {
+	icon = "gfx/interface/icons/ideology_icons/dop_ideology/british_liberal.dds"
+	priority = 1000
+	lawgroup_distribution_of_power = {
+		law_autocracy = strongly_disapprove
+		law_landed_voting = neutral
+		law_wealth_voting = approve
+		law_census_voting = strongly_approve
+		law_universal_suffrage = disapprove
+		law_anarchy = strongly_disapprove
+		#law_colonial_admin = disapprove
+		law_organic_democracy = strongly_disapprove
+	}
+
+	lawgroup_bureaucracy = {
+		law_hereditary_bureaucrats = disapprove
+		law_appointed_bureaucrats = neutral
+		law_elected_bureaucrats = approve
+	}
+
+	lawgroup_legislative_principles = {
+		law_advisory_body = disapprove
+		law_separated_powers = disapprove
+		law_supreme_legislature = approve
+	}
+
+	lawgroup_labour_associations = {
+		law_combination_acts = neutral
+		law_corporatized_unions = disapprove
+		law_anti_strike_laws = approve
+		law_syndicalism = strongly_disapprove
+		law_right_to_associate = approve
+		law_socialist_labor_unions = strongly_disapprove
 	}
 }
