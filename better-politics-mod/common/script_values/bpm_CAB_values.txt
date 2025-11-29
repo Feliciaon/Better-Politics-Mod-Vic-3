@@ -96,12 +96,12 @@ bpm_number_of_institutitions = {
         }
         add = 1
     }
-    if = {
-        limit = {
-            has_institution = institution_suffrage
-        }
-        add = 1
-    }
+    #if = {
+    #    limit = {
+    #        has_institution = institution_suffrage
+    #    }
+    #    add = 1
+    #}
     if = {
         limit = {
             has_institution = institution_culture

@@ -108,12 +108,12 @@ bpm_total_num_positions = {
 		}
 		add = 1
 	}
-	if = {
-		limit = {
-			has_institution = institution_suffrage
-		}
-		add = 1
-	}
+	#if = {
+	#	limit = {
+	#		has_institution = institution_suffrage
+	#	}
+	#	add = 1
+	#}
 	if = {
 		limit = {
 			has_institution = institution_culture
@@ -217,16 +217,16 @@ bpm_number_of_positions_ig = {
 		}
 		add = 1
 	}
-	if = {
-		limit = {
-			owner = {
-				has_institution = institution_suffrage
-				has_variable = bpm_minister_of_suffrage
-				var:bpm_minister_of_suffrage.interest_group = prev
-			}
-		}
-		add = 1
-	}
+	#if = {
+	#	limit = {
+	#		owner = {
+	#			has_institution = institution_suffrage
+	#			has_variable = bpm_minister_of_suffrage
+	#			var:bpm_minister_of_suffrage.interest_group = prev
+	#		}
+	#	}
+	#	add = 1
+	#}
 	if = {
 		limit = {
 			owner = {

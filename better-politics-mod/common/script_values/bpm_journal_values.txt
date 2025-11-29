@@ -103,7 +103,7 @@ bpm_je_propaganda_of_the_deed_baseline_target = {
 				bpm_country_laws_no_voting = no
 				NOT = { 
 					has_law = law_type:law_universal_suffrage
-					institution:institution_suffrage.investment = 5 
+					#institution:institution_suffrage.investment = 5 
 				}
 			}
 			add = 10

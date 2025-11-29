@@ -33,7 +33,7 @@ bpm_cabinet_max_level_from_skill_centralization = {
 }
 bpm_cabinet_max_level_from_skill_suffrage = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-    country_institution_suffrage_max_investment_add = 1
+    #country_institution_suffrage_max_investment_add = 1
 }
 bpm_cabinet_max_level_from_skill_culture = {
     icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds

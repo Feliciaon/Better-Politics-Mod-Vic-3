@@ -152,9 +152,9 @@
 		institution_centralization = {
 			value = 300
 		}	
-		institution_suffrage = {
-			value = 100
-		}
+		#institution_suffrage = {
+		#	value = 100
+		#}
 		institution_diplomacy = {
 			value = 150
 		}
@@ -315,9 +315,9 @@ ai_strategy_reactionary_agenda = {
 		institution_centralization = {
 			value = 100
 		}	
-		institution_suffrage = {
-			value = 75
-		}
+		#institution_suffrage = {
+		#	value = 75
+		#}
 		institution_diplomacy = {
 			value = 150
 		}
@@ -514,9 +514,9 @@ ai_strategy_progressive_agenda = {
 		institution_centralization = {
 			value = 300
 		}	
-		institution_suffrage = {
-			value = 200
-		}	
+		#institution_suffrage = {
+		#	value = 200
+		#}	
 		institution_diplomacy = {
 			value = 100
 		}
@@ -724,9 +724,9 @@ ai_strategy_progressive_conservative_agenda = {
 		institution_centralization = {
 			value = 350
 		}	
-		institution_suffrage = {
-			value = 150
-		}	
+		#institution_suffrage = {
+		#	value = 150
+		#}	
 		institution_diplomacy = {
 			value = 100
 		}
@@ -911,9 +911,9 @@ ai_strategy_egalitarian_agenda = {
 		institution_centralization = {
 			value = 350
 		}	
-		institution_suffrage = {
-			value = 200
-		}	
+		#institution_suffrage = {
+		#	value = 200
+		#}	
 		institution_diplomacy = {
 			value = 100
 		}
@@ -1113,9 +1113,9 @@ ai_strategy_nationalist_agenda = {
 		institution_centralization = {
 			value = 200
 		}	
-		institution_suffrage = {
-			value = 100
-		}
+		#institution_suffrage = {
+		#	value = 100
+		#}
 		institution_diplomacy = {
 			value = 150
 		}
@@ -1313,9 +1313,9 @@ ai_strategy_maintain_mandate_of_heaven = {
 		institution_centralization = {
 			value = 50
 		}	
-		institution_suffrage = {
-			value = 0
-		}
+		#institution_suffrage = {
+		#	value = 0
+		#}
 		institution_diplomacy = {
 			value = 150
 		}

@@ -173,6 +173,8 @@ bpm_decrease_suffrage_sway_gui = {
 			bpm_ig_is_anti_democratic = yes
 			leader = { bpm_leader_is_right_wing = yes }
 		}
+
+		always = no
 	}
 	is_valid = {
 		owner.var:bpm_law_sway_maneuvers >= bpm_law_enactment_sway_cost
