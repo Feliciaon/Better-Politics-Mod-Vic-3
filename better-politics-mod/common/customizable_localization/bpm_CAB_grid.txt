@@ -58,12 +58,12 @@
 		localization_key = bpm_home_affairs_grid
 	}
 
-	#text = {
-	#	trigger = {
-	#		owner.institution:institution_suffrage.type ?= type
-	#	}
-	#	localization_key = bpm_suffrage_grid
-	#}
+	text = {
+		trigger = {
+			owner.institution:institution_suffrage.type ?= type
+		}
+		localization_key = bpm_suffrage_grid
+	}
 
 	text = {
 		trigger = {

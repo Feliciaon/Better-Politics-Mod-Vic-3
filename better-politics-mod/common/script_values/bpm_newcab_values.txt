@@ -259,23 +259,23 @@ bpm_cost_ig_position = {
             desc = bpm_ig_wants_position
         }
     }
-    #if = {
-    #    limit = {
-    #        bpm_check_has_institution = {OWNER = owner INSTITUTION = institution_suffrage}
-    #        exists = scope:bpm_reference_institution_type
-    #        owner.institution:institution_suffrage.type ?= scope:bpm_reference_institution_type
-    #        OR = {
-    #            is_interest_group_type = ig_conservatives
-    #            is_interest_group_type = ig_liberals
-    #            is_interest_group_type = ig_market_liberals
-    #            is_interest_group_type = ig_radicals
-    #        }
-    #    }
-    #    subtract = {
-    #        value = 3
-    #        desc = bpm_ig_wants_position
-    #    }
-    #}
+    if = {
+        limit = {
+            bpm_check_has_institution = {OWNER = owner INSTITUTION = institution_suffrage}
+            exists = scope:bpm_reference_institution_type
+            owner.institution:institution_suffrage.type ?= scope:bpm_reference_institution_type
+            OR = {
+                is_interest_group_type = ig_conservatives
+                is_interest_group_type = ig_liberals
+                is_interest_group_type = ig_market_liberals
+                is_interest_group_type = ig_radicals
+            }
+        }
+        subtract = {
+            value = 3
+            desc = bpm_ig_wants_position
+        }
+    }
     if = {
         limit = {
             bpm_check_has_institution = {OWNER = owner INSTITUTION = institution_culture}

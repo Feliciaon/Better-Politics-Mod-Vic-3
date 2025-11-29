@@ -109,9 +109,9 @@
 		institution_centralization = {
 			value = 300
 		}	
-		#institution_suffrage = {
-		#	value = 150
-		#}	
+		institution_suffrage = {
+			value = 150
+		}	
 		institution_diplomacy = {
 			value = 100
 		}
@@ -264,9 +264,9 @@ ai_strategy_socialist_retreat_agenda = {
 		institution_centralization = {
 			value = 300
 		}	
-		#institution_suffrage = {
-		#	value = 50
-		#}	
+		institution_suffrage = {
+			value = 50
+		}	
 		institution_diplomacy = {
 			value = 100
 		}

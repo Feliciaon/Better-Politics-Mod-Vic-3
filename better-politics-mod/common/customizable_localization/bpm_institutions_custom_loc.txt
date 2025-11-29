@@ -133,21 +133,21 @@ bpm_health_system_institution_name = {
 	}
 }
 
-#bpm_suffrage_institution_name = {
-#	type = country
-#	random_valid = no
-#
-#	text = {
-#		trigger = { this = c:USA }
-#		localization_key = institution_suffrage_usa
-#	}
-#
-#	text = {
-#		trigger = { always = no }
-#		fallback = yes
-#		localization_key = institution_suffrage_base
-#	}
-#}
+bpm_suffrage_institution_name = {
+	type = country
+	random_valid = no
+
+	text = {
+		trigger = { this = c:USA }
+		localization_key = institution_suffrage_usa
+	}
+
+	text = {
+		trigger = { always = no }
+		fallback = yes
+		localization_key = institution_suffrage_base
+	}
+}
 
 bpm_police_institution_name = {
 	type = country

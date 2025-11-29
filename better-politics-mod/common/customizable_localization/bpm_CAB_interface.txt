@@ -66,12 +66,12 @@ bpm_institution_type = {
 		localization_key = bpm_minister_of_home_affairs
 	}
 
-	#text = {
-	#	trigger = {
-	#		owner.institution:institution_suffrage.type ?= type
-	#	}
-	#	localization_key = bpm_minister_of_suffrage
-	#}
+	text = {
+		trigger = {
+			owner.institution:institution_suffrage.type ?= type
+		}
+		localization_key = bpm_minister_of_suffrage
+	}
 
 	text = {
 		trigger = {
