@@ -891,7 +891,7 @@ law_census_voting = {
 		
 		country_bpm_labor_consciousness_target_mult = -0.05
 
-		country_rigidity_baseline_add = -10
+		country_rigidity_baseline_add = -15
 	}
 
 	on_activate = {
@@ -991,7 +991,7 @@ law_universal_suffrage = {
 		state_political_strength_from_wealth_mult = 0.25
 		country_populist_movement_support_add = 0.05
 
-		country_rigidity_baseline_add = -15
+		country_rigidity_baseline_add = -20
 		country_bpm_labor_consciousness_target_mult = -0.2
 		state_loyalists_from_political_movements_mult = 0.25
 
