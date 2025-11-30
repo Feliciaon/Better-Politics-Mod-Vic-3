@@ -15,4 +15,23 @@
 		set_variable = local_christdem_split_var
 		bpm_initialize_catholic_interests = yes
 	}
+
+	every_country = {
+		limit = {
+			OR = {
+				has_law = law_type:law_universal_suffrage
+				has_law = law_type:law_census_voting
+				has_law = law_type:law_wealth_voting
+				has_law = law_type:law_landed_voting
+			}
+		}
+
+		bpm_add_ig_to_their_desired_party = yes
+		bpm_update_government_and_opposition = yes
+		bpm_add_ig_to_their_desired_party = yes
+		bpm_add_ig_to_their_desired_party = yes
+		bpm_add_ig_to_their_desired_party = yes
+		bpm_add_ig_to_their_desired_party = yes
+		bpm_add_ig_to_their_desired_party = yes
+	}
 }
