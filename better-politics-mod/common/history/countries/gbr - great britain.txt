@@ -101,9 +101,9 @@
 			type = je_bpm_derby_dilly
 		}
 
-		add_journal_entry = {
-			type = je_bpm_repeal_and_peel
-		}
+		#add_journal_entry = {
+		#	type = je_bpm_repeal_and_peel
+		#}
 
 		if = {
 			limit = {

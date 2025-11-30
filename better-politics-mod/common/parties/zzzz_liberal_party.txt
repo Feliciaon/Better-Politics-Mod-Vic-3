@@ -1348,6 +1348,9 @@ liberal_party = {
 						is_interest_group_type = ig_agrarian_populists
 						owner = {
 							has_variable = bpm_lichfield_house_compact
+							NOT = {
+								has_variable = bpm_oconnell_left_himself
+							}
 						}
 					}
 					add = {
@@ -1360,8 +1363,9 @@ liberal_party = {
 					limit = {
 						is_interest_group_type = ig_radicals
 						owner = { 
+							has_variable = bpm_lichfield_house_compact
 							NOT = {
-								has_variable = bpm_radicals_discontent
+								has_variable = bpm_whigs_ousted_from_office
 							}
 						}
 					}

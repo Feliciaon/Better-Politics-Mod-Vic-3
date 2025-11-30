@@ -1326,8 +1326,8 @@ ideology_eco_aristocratic_laissez_faire = {
 	}
 
     lawgroup_taxation = {
-		law_consumption_based_taxation = neutral
-		law_land_based_taxation = disapprove
+		law_consumption_based_taxation = disapprove
+		law_land_based_taxation = neutral
 		law_per_capita_based_taxation = approve
 		law_proportional_taxation = disapprove
 		law_graduated_taxation = strongly_disapprove
@@ -1342,9 +1342,9 @@ ideology_eco_aristocratic_laissez_faire = {
 
 	lawgroup_repeatable_economy = {
 		law_repeatable_economy_liberalization = strongly_approve
-		law_repeatable_economy_agricultural_investment = neutral
+		law_repeatable_economy_agricultural_investment = approve
 		law_repeatable_economy_peasant_corvee = disapprove
-		law_repeatable_economy_public_works = neutral
+		law_repeatable_economy_public_works = approve
 		law_repeatable_economy_forced_industrialization = strongly_disapprove
 	}
 }
@@ -1379,8 +1379,8 @@ ideology_eco_aristocratic_modernizer = {
 	}
 
     lawgroup_taxation = {
-		law_consumption_based_taxation = neutral
-		law_land_based_taxation = disapprove
+		law_consumption_based_taxation = disapprove
+		law_land_based_taxation = neutral
 		law_per_capita_based_taxation = approve
 		law_proportional_taxation = approve
 		law_graduated_taxation = disapprove
@@ -1395,9 +1395,9 @@ ideology_eco_aristocratic_modernizer = {
 
 	lawgroup_repeatable_economy = {
 		law_repeatable_economy_liberalization = approve
-		law_repeatable_economy_agricultural_investment = neutral 
+		law_repeatable_economy_agricultural_investment = approve 
 		law_repeatable_economy_peasant_corvee = disapprove
 		law_repeatable_economy_public_works = approve
-		law_repeatable_economy_forced_industrialization = approve
+		law_repeatable_economy_forced_industrialization = disapprove
 	}
 }

@@ -293,7 +293,7 @@
 			bpm_remove_all_gov_ideologies = yes
 			add_ideology = ideology_gov_moderate_monarchist
 			bpm_remove_all_dop_ideologies = yes
-			add_ideology = ideology_dop_moderate_democrat
+			add_ideology = ideology_dop_british_liberal
 			bpm_remove_all_eco_ideologies = yes
 			add_ideology = ideology_eco_aristocratic_laissez_faire
 
@@ -328,6 +328,11 @@
 		ig:ig_rural_folk = {
 			bpm_remove_all_eco_ideologies = yes
 			add_ideology = ideology_eco_conservative_agrarian
+		}
+
+		ig:ig_intelligentsia = {
+			bpm_remove_all_eco_ideologies = yes
+			add_ideology = ideology_eco_laissez_faire
 		}
 
 		every_state = {

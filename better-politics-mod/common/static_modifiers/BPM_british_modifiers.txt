@@ -9,7 +9,7 @@ bpm_great_reform_act = {
 	#interest_group_ig_conservatives_pol_str_mult = -0.75
 	#interest_group_ig_radicals_pop_attraction_mult = -0.25
 	interest_group_ig_landowners_pop_attraction_mult = -0.5
-	interest_group_ig_trade_unions_pol_str_mult = -0.75
+	
 	interest_group_ig_armed_forces_pop_attraction_mult = -0.75
 	#interest_group_ig_market_liberals_pop_attraction_mult = 0.25
 	interest_group_ig_petty_bourgeoisie_pop_attraction_mult = -0.5
@@ -41,6 +41,7 @@ bpm_factory_acts = {
 
 	country_institution_workplace_safety_max_investment_add = -4
 	building_working_conditions_mult = -0.1
+	interest_group_ig_trade_unions_pol_str_mult = -0.75
 }
 
 bpm_two_and_six_acts = {
