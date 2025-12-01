@@ -72,6 +72,15 @@
 				set_interest_group_name = ig_gentry_assembly
 			}
 		}
+		# Szlachta
+		else_if = {
+			limit = {
+				c:POL ?= this
+			}
+			ig:ig_landowners = {
+				set_interest_group_name = ig_szlachta
+			}
+		}
 		# Roman Landowners
 		else_if = {
 			limit = {

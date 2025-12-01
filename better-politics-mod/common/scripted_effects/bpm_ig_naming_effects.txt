@@ -496,6 +496,12 @@ bpm_rename_agpop_ig = {
 		ig:ig_agrarian_populists ?= { set_interest_group_name = ig_narodniks }
 	}
 	else_if = {
+		limit = {
+			c:POL ?= this
+		}
+		ig:ig_agrarian_populists ?= { set_interest_group_name = ig_gromadzianie }
+	}
+	else_if = {
 		limit = { country_has_primary_culture = cu:korean }
 		ig:ig_agrarian_populists ?= { set_interest_group_name = ig_donghak }
 	}
@@ -547,7 +553,6 @@ bpm_rename_agpop_ig = {
 		}
 		ig:ig_agrarian_populists ?= { set_interest_group_name = ig_bianchi }
 	}
-	
 	else = {
 		ig:ig_agrarian_populists ?= { set_interest_group_name = ig_agrarian_populists }
 	}
@@ -751,6 +756,12 @@ bpm_rename_radlib_ig = {
 			ig:ig_radicals ?= { set_interest_group_name = ig_progressive_liberals }
 		}
 	}
+	else_if = {
+		limit = {
+			c:POL ?= this
+		}
+		ig:ig_radicals ?= { set_interest_group_name = ig_demokraci }
+	}
 	else_if ={
 		limit = {
 			this = c:JAP
@@ -847,6 +858,12 @@ bpm_rename_liberal_ig = {
 			limit = { ig:ig_liberals ?= { bpm_ig_is_republican = no } }
 			ig:ig_liberals ?= { set_interest_group_name = ig_orleanists_left }
 		}
+	}
+	else_if = {
+		limit = {
+			c:POL ?= this
+		}
+		ig:ig_liberals ?= { set_interest_group_name = ig_lelewelisci }
 	}
 	else_if = {
 		limit = {
@@ -1119,6 +1136,12 @@ bpm_rename_conservative_ig = {
 			has_law = law_type:law_monarchy
 		}
 		ig:ig_conservatives ?= { set_interest_group_name = ig_saquaremas }
+	}
+	else_if = {
+		limit = {
+			c:POL ?= this
+		}
+		ig:ig_conservatives ?= { set_interest_group_name = ig_lambertysci }
 	}
 	else_if = {
 		limit = {
@@ -1406,6 +1429,12 @@ bpm_rename_reactionary_ig = {
 		else_if = {
 			ig:ig_reactionaries ?= { set_interest_group_name = ig_legitimists }
 		}
+	}
+	else_if = {
+		limit = {
+			c:POL ?= this
+		}
+		ig:ig_reactionaries ?= { set_interest_group_name = ig_lojalisci }
 	}
 	else_if ={
 		limit = {
