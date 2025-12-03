@@ -910,10 +910,14 @@ bpm_balancing = {
 	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
 	country_bureaucracy_investment_cost_factor_mult = -0.33
 	state_bureaucracy_population_base_cost_factor_mult = -0.33
-	country_institution_cost_institution_suffrage_mult = -0.33
 	country_institution_cost_institution_economy_mult = -0.33
 	country_institution_cost_institution_culture_mult = -0.33
 	country_authority_add = 500
+
+	country_legitimacy_govt_size_add = 1
+	country_legitimacy_govt_total_clout_add = 50
+	country_legitimacy_govt_total_votes_add = 75
+	country_legitimacy_ideological_incoherence_mult = 0.5
 }
 
 bpm_ai_cheats = {

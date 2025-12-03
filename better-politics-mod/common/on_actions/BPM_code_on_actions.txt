@@ -249,10 +249,11 @@ on_bpm_monthly_pulse_country = {
 		peoples_springtime.13
 		italian_springtime.3
 		peoples_springtime.6
+		peoples_springtime.1
 		bpm_france.3
 		bpm_france.4
 		bpm_clear_stubbornness_utils.3
-		bpm_china.1
+		# bpm_china.1
 		bpm_china.3
 		bpm_colony_events.2
 		bpm_colony_events.3
@@ -1124,10 +1125,13 @@ on_bpm_government_reformed = {
 
 on_bpm_election_campaign_start = {
 	effect = {
-		every_active_party = {
-			limit = {
-				is_party_type = one_party_independents
-			}
+		#every_active_party = {
+		#	limit = {
+		#		is_party_type = one_party_independents
+		#	}
+		#	add_momentum = -200
+		#}
+		py:one_party_independents = {
 			add_momentum = -200
 		}
 		if = {

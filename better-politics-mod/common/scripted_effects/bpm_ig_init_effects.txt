@@ -460,8 +460,15 @@ bpm_initialize_marlibs = {
 				bpm_remove_all_wel_ideologies = yes
 				add_ideology = ideology_wel_public_welfare
 			}
-			bpm_remove_all_eco_ideologies = yes
-			add_ideology = ideology_eco_modernizer
+			if = {
+				limit = { 
+					NOT = {
+						ROOT = c:USA
+					}
+				}
+				bpm_remove_all_eco_ideologies = yes
+				add_ideology = ideology_eco_modernizer
+			}
 			bpm_reorder_ideologies = yes
 			set_interest_group_name = ig_moderate_liberals
 		}
@@ -494,6 +501,7 @@ bpm_initialize_fascists = {
 				}
 				add_ideology = ideology_gov_radical_monarchist
 			}
+			else = { add_ideology = ideology_gov_anti_proletarian }
 			if = {
 				limit = {
 					ROOT = { country_has_primary_culture = cu:brazilian	}	
