@@ -825,7 +825,7 @@ ideology_dop_organic_power = {
 }
 
 ideology_dop_aristocratic_democrat = {
-	icon = "gfx/interface/icons/ideology_icons/dop_ideology/aristocratic_democrat.dds"
+	icon = "gfx/interface/icons/ideology_icons/dop_ideology/technocrat.dds"
 	priority = 1000
 	lawgroup_distribution_of_power = {
 		law_autocracy = strongly_disapprove
@@ -927,7 +927,7 @@ ideology_dop_british_liberal = {
 		law_corporatized_unions = disapprove
 		law_anti_strike_laws = approve
 		law_syndicalism = strongly_disapprove
-		law_right_to_associate = approve
+		law_right_to_associate = neutral
 		law_socialist_labor_unions = strongly_disapprove
 	}
 }

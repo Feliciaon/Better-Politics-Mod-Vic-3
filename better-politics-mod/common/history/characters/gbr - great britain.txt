@@ -9,7 +9,7 @@
 			birth_date = 1765.8.21
 			dna = dna_king_william_04
 			culture = cu:british
-			interest_group = ig_liberals #ig_petty_bourgeoisie
+			interest_group = ig_liberals #ig_market_liberals
 			ideology = ideology_royalist
 			traits = {
 				romantic
