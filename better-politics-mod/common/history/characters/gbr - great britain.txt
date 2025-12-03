@@ -1,0 +1,278 @@
+﻿CHARACTERS = {
+	c:GBR = {
+		create_character = {
+			first_name = William
+			last_name = Hannover
+			historical = yes
+			ruler = yes
+			noble = yes
+			birth_date = 1765.8.21
+			dna = dna_king_william_04
+			culture = cu:british
+			interest_group = ig_liberals #ig_market_liberals
+			ideology = ideology_royalist
+			traits = {
+				romantic
+				bigoted
+			}
+			on_created = {
+				set_variable = {
+					name = is_billy
+				}   
+				set_variable = is_married       
+			}
+		}
+		
+		create_character = {
+			first_name = Victoria
+			last_name = Hannover
+			historical = yes
+			heir = yes
+			female = yes
+			noble = yes
+			birth_date = 1819.5.24
+			dna = dna_queen_victoria
+			culture = cu:british
+			interest_group = ig_liberals #ig_industrialists
+			ideology = ideology_moderate
+			traits = {
+			direct
+			}
+			on_created = {
+				set_variable = {
+					name = is_victoria
+				}               
+			}
+		}
+
+		create_character = {
+			first_name = Edward
+			last_name = of_Saxe-Coburg-Gotha
+			historical = yes
+			female = no
+			noble = yes
+			birth_date = 1841.11.09
+			dna = dna_edward_vii
+			culture = cu:british
+			interest_group = ig_liberals
+			ideology = ideology_moderate
+			traits = {
+				erudite
+				charismatic
+				inexperienced
+			}
+		}
+
+		create_character = {
+			first_name = William
+			last_name = Lamb
+			historical = yes
+			culture = cu:british
+			ig_leader = yes
+			birth_date = 1779.3.15
+			interest_group = ig_liberals #ig_intelligentsia
+			ideology = ideology_moderate
+			traits = {
+				arrogant
+				hedonist
+				basic_political_operator
+			}
+			on_created = {	
+				bpm_set_headofgov_sticky = yes		
+			}
+		}
+
+		create_character = {
+			first_name = Robert
+   			last_name = Peel
+			historical = yes
+			culture = cu:british
+			female = no
+			ig_leader = yes
+			religion = protestant
+			ideology = ideology_moderate
+			interest_group = ig_market_liberals
+			birth_date = 1788.2.5
+			traits = {
+				meticulous
+				experienced_political_operator
+				tactful
+			}
+
+			on_created = {
+				set_variable = conservative_party_leader	
+			}
+		}
+
+		create_character = {
+			first_name = William
+			last_name = Howley
+			historical = yes
+			ig_leader = yes
+			culture = cu:british
+			interest_group = ig_devout
+			ideology = ideology_traditionalist
+			birth_date = 1766.2.12
+			traits = {
+				tactful
+				pious
+			}
+		}
+
+		create_character = {
+			first_name = Thomas
+			last_name = Attwood
+			historical = yes
+			culture = cu:british
+			birth_date = 1783.10.6
+			ig_leader = yes
+			interest_group = ig_industrialists
+			ideology = ideology_moderate
+			traits = {
+				direct
+				experienced_entrepreneur
+			}
+		}
+
+		create_character = {
+			first_name = Charles
+			last_name = Trevelyan
+			historical = yes
+			culture = cu:british
+			birth_date = 1807.4.2
+   			ig_leader = yes
+			interest_group = ig_petty_bourgeoisie
+			ideology = ideology_market_liberal
+			traits = {
+				direct
+				cruel
+			}
+		}
+
+		create_character = {
+			first_name = Edward 
+			last_name = Knatchbull
+			historical = yes
+			culture = cu:british
+			birth_date = 1781.12.20
+			ig_leader = yes
+			interest_group = ig_rural_folk
+			ideology = ideology_traditionalist
+			traits = {
+				persistent
+				arrogant
+			}
+		}
+
+		create_character = {
+			first_name = Edward
+			last_name = Smith-Stanley
+			historical = yes
+			culture = cu:british
+			birth_date = 1799.1.1
+			ig_leader = yes
+			interest_group = ig_conservatives
+			ideology = ideology_center_leader
+			traits = {
+				charismatic
+				direct
+				experienced_political_operator
+			}
+		}
+
+		create_character = {		
+			first_name = Arthur
+			last_name = Wellesley
+			historical = yes
+			culture = cu:british
+			birth_date = 1769.5.1
+			dna = dna_lord_wellington
+			ig_leader = yes
+			interest_group = ig_armed_forces
+			ideology = ideology_moderate
+			traits = {
+				celebrity_commander
+				expert_defensive_strategist
+				brave
+			} 
+		}
+
+		create_character = {
+			first_name = Daniel
+    		last_name = O-Connel
+			historical = yes
+			culture = cu:irish
+			religion = rel:catholic
+			ideology = ideology_pacifist
+			ig_leader = yes
+			interest_group = ig_agrarian_populists
+ 		    birth_date = 1775.8.6
+			traits = {
+				charismatic
+				cautious
+				arrogant
+			}
+		}
+
+		create_character = {
+			first_name = Charles
+			last_name = Gordon_Lennox
+			historical = yes
+			culture = cu:british
+			birth_date = 1781.8.3
+			ig_leader = yes
+			interest_group = ig_reactionaries #ig_rural_folk
+			ideology = ideology_center_leader #ideology_traditionalist
+			traits = {
+				imperious
+			}
+		}
+
+		create_character = {
+			first_name = Anthony
+			last_name = Ashley-Cooper
+			historical = yes
+			culture = cu:british
+			birth_date = 1801.4.28
+			ig_leader = yes
+			ideology = ideology_reformer
+  			interest_group = ig_landowners #ig_landowners
+			traits = {
+				pious
+				persistent
+				basic_diplomat
+			}  
+		}
+
+		create_character = {
+			first_name = Thomas
+			last_name = Barnes
+			historical = yes
+			culture = cu:british
+			birth_date = 1785.9.11
+			ig_leader = yes
+			interest_group = ig_intelligentsia #ig_petty_bourgeoisie
+			ideology = ideology_reformer
+			traits = {
+				literary
+				meticulous
+			}
+		}
+
+		create_character = {
+			first_name = John
+			last_name = Bright
+			historical = yes
+			culture = cu:british
+			birth_date = 1811.11.16
+			ig_leader = yes
+			ideology = ideology_pacifist
+ 		    interest_group = ig_radicals
+			traits = {
+				basic_diplomat
+				firebrand
+				charismatic
+			}
+		}
+	}
+}

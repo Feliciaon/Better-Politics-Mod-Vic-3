@@ -74,9 +74,11 @@ GBR_william_lamb = {
     birth_date = 1779.3.15
     ig_leader = yes
     interest_group = ig_liberals #ig_intelligentsia
-    ideology = ideology_reformer
+    ideology = ideology_moderate
     traits = {
         arrogant
+        hedonist
+        basic_political_operator
     }
     on_created = {
 		bpm_set_headofgov_sticky = yes
@@ -91,8 +93,8 @@ GBR_robert_peel = {
     female = no
     ig_leader = yes
     religion = protestant
-    ideology = ideology_market_liberal
-    interest_group = ig_industrialists
+    ideology = ideology_moderate
+    interest_group = ig_market_liberals
     birth_date = 1788.2.5
     traits = {
         meticulous
@@ -160,17 +162,100 @@ GBR_thomas_barnes = {
     }
 }
 
+GBR_thomas_attwood = {
+    first_name = Thomas
+    last_name = Attwood
+    historical = yes
+    birth_date = 1783.10.6
+    ig_leader = yes
+    interest_group = ig_industrialists
+    ideology = ideology_moderate
+    traits = {
+        direct
+        experienced_entrepreneur
+    }
+}
+
+GBR_charles_trevelyan = {
+    first_name = Charles
+    last_name = Trevelyan
+    historical = yes
+    birth_date = 1807.4.2
+    ig_leader = yes
+    interest_group = ig_petty_bourgeoisie
+    ideology = ideology_market_liberal
+    traits = {
+        direct
+        cruel
+    }
+}
+
+GBR_edward_knatchbull = {
+    first_name = Edward
+    last_name = Knatchbull
+    historical = yes
+    birth_date = 1781.12.20
+    ig_leader = yes
+    interest_group = ig_rural_folk
+    ideology = ideology_traditionalist
+    traits = {
+        persistent
+        arrogant
+    }
+}
+
 GBR_edward_smith-stanley = {
     # Edward Smith-Stanley, 14th Earl of Derby, Lord Stanley
     first_name = Edward
     last_name = Smith-Stanley
     historical = yes
-    birth_date = 1799.1.1
     ig_leader = yes
-    interest_group = ig_conservatives #ig_landowners
-    ideology = ideology_center_leader #ideology_traditionalist
+    culture = cu:british
+    female = no
+    religion = protestant
+    ideology = ideology_center_leader
+    interest_group = ig_conservatives
+    birth_date = 1799.1.1
     traits = {
         imperious
+        charismatic
+        experienced_political_operator
+    }
+}
+
+GBR_arthur_wellesley = {
+    first_name = Arthur
+    last_name = Wellesley
+    historical = yes
+    culture = cu:british
+    female = no
+    religion = protestant
+    ideology = ideology_moderate
+    dna = dna_lord_wellington
+    interest_group = ig_armed_forces
+    birth_date = 1769.5.1
+	ig_leader = yes
+    traits = {
+        celebrity_commander
+        expert_defensive_strategist
+        brave
+    }  
+}
+
+GBR_daniel_o_connel = {
+    first_name = Daniel
+    last_name = O'Connel
+    historical = yes
+    ig_leader = yes
+    culture = cu:irish
+    female = no
+    religion = catholic
+    ideology = ideology_pacifist
+    interest_group = ig_agrarian_populists
+    birth_date = 1775.8.6
+    traits = {
+        charismatic
+        cautious
         arrogant
     }
 }
@@ -189,6 +274,24 @@ GBR_charles_gordon-lennox = {
     }
 }
 
+GBR_anthony_ashley-cooper = {
+    first_name = Anthony
+    last_name = Ashley-Cooper
+    historical = yes
+    culture = cu:british
+    female = no
+    religion = protestant
+    ideology = ideology_reformer
+    interest_group = ig_landowners #ig_landowners
+    ig_leader = yes
+    birth_date = 1801.4.28
+    traits = {
+        pious
+        persistent
+        basic_diplomat
+    }  
+}
+
 # Generated IG Leaders
 
 gbr_o_connor_template = {
@@ -199,10 +302,11 @@ gbr_o_connor_template = {
     birth_date = 1796.1.1
     ig_leader = yes
     dna = dna_feargus_o_connor
-    interest_group = ig_radicals
+    interest_group = ig_trade_unions
     ideology = ideology_radical
     traits = {
         charismatic
+        arrogant
     }
     interest_group_leader_usage = {
         country_trigger = {
@@ -225,40 +329,7 @@ gbr_o_connor_template = {
     } 
 }
 
-gbr_wellington_character_template = {
-    first_name = Arthur
-    last_name = Wellesley
-    historical = yes
-    culture = cu:british
-    female = no
-    religion = protestant
-    ideology = ideology_jingoist_leader
-    dna = dna_lord_wellington
-    interest_group = ig_conservatives
-    birth_date = 1769.5.1
-	ig_leader = yes
-    traits = {
-        celebrity_commander
-        expert_defensive_strategist
-        brave
-    }   
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:GBR
-            this = c:GBR
-        }
-        interest_group_trigger = {
-            bpm_ig_is_marginal = no
-            OR = {
-                is_interest_group_type = ig_industrialists
-                is_interest_group_type = ig_landowners
-            }
-        }   
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1852.1.1    
-        chance = 75
-    }   
-}
+
 
 gbr_disraeli_character_template = { # Disraeli, Jingoist, Landowners
     first_name = Benjamin
@@ -285,8 +356,7 @@ gbr_disraeli_character_template = { # Disraeli, Jingoist, Landowners
         interest_group_trigger = {
             bpm_ig_is_marginal = no
             OR = {
-                is_interest_group_type = ig_landowners
-                is_interest_group_type = ig_conservatives
+                is_interest_group_type = ig_reactionaries
             }
         }   
         earliest_usage_date = 1868.1.1
@@ -303,7 +373,7 @@ gbr_gladstone_character_template = { # Gladstone, market liberal, intelligentsia
     female = no
     religion = protestant
     ideology = ideology_market_liberal
-    interest_group = ig_liberals
+    interest_group = ig_market_liberals
     birth_date = 1809.1.1
     dna = dna_william_ewart_gladstone
 	ig_leader = yes
@@ -337,8 +407,8 @@ gbr_temple_character_template = { # Viscount Palmerston
     culture = cu:british
     female = no
     religion = protestant
-    ideology = ideology_market_liberal
-    interest_group = ig_liberals
+    ideology = ideology_center_leader
+    interest_group = ig_national_liberals
     birth_date = 1784.8.20
     dna = dna_lord_palmerston
 	ig_leader = yes
@@ -361,7 +431,7 @@ gbr_temple_character_template = { # Viscount Palmerston
         }   
         earliest_usage_date = 1836.1.1
         latest_usage_date = 1865.1.1
-        chance = 75
+        chance = 1000
     }   
 }
 
@@ -408,39 +478,7 @@ gbr_george_curzon = { # George Curzon, 1 Marquess Curzon of Kedleston
     }   
 }
 
-GBR_anthony_ashley-cooper = {
-    first_name = Anthony
-    last_name = Ashley-Cooper
-    historical = yes
-    culture = cu:british
-    female = no
-    religion = protestant
-    ideology = ideology_reformer
-    interest_group = ig_conservatives #ig_landowners
-    birth_date = 1801.4.28
-    traits = {
-        pious
-        persistent
-        basic_diplomat
-    }   
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:GBR
-            this = c:GBR
-			has_dlc_feature = ep1_content
-        }
-        interest_group_trigger = {
-            bpm_ig_is_marginal = no
-            OR = {
-                is_interest_group_type = ig_landowners
-                is_interest_group_type = ig_conservatives
-            }
-        }   
-        earliest_usage_date = 1836.1.1
-        latest_usage_date = 1852.1.1
-        chance = 50
-    }   
-}
+
 
 GBR_john_russell = {
     first_name = John 
@@ -449,11 +487,11 @@ GBR_john_russell = {
     culture = cu:british
     female = no
     religion = protestant
-    ideology = ideology_pacifist
+    ideology = ideology_moderate
     interest_group = ig_liberals #ig_intelligentsia
     birth_date = 1792.8.18
     traits = {
-        reckless
+        cautious
         experienced_political_operator
     }   
     interest_group_leader_usage = {
@@ -525,25 +563,6 @@ GBR_john_bright = {
         basic_diplomat
         firebrand
         charismatic
-    }   
-    interest_group_leader_usage = {
-        country_trigger = {
-            exists = c:GBR
-            this = c:GBR
-			has_dlc_feature = ep1_content
-        }
-        interest_group_trigger = {
-            bpm_ig_is_marginal = no
-            OR = {
-                is_interest_group_type = ig_liberals
-                is_interest_group_type = ig_radicals
-                is_interest_group_type = ig_intelligentsia
-                is_interest_group_type = ig_trade_unions
-            }
-        }   
-        earliest_usage_date = 1843.1.1
-        latest_usage_date = 1870.1.1
-        chance = 50
     }
 }
 
