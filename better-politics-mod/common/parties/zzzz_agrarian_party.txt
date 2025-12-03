@@ -372,6 +372,7 @@ agrarian_party = {
 				value = bpm_party_loyalty_values
 			}
 		}
+		
 		if = {
 			limit = {
 				owner = { 
@@ -409,6 +410,25 @@ agrarian_party = {
 				add = {
 					value = 100
 					desc = "bpm_second_party_system"
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = { 
+					this = c:GBR
+					NOT = {
+						has_variable = bpm_lichfield_house_compact
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_interest_group_type = ig_agrarian_populists
+				}
+				add = {
+					value = 100
+					desc = "bpm_repealed_house_compact"
 				}
 			}
 		}

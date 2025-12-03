@@ -1,0 +1,188 @@
+﻿bpm_repeal_the_lichfild_house_compact = {
+	name = "bpm_repeal_the_lichfild_compact_name"
+	desc = "bpm_repeal_the_lichfild_compact_desc"
+
+	visible = {
+    	exists = c:GBR
+		root = c:GBR
+		has_variable = bpm_lichfield_house_compact
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = bpm_derby_dilly_is_in_the_whig_party
+			ig:ig_conservatives ?= {
+				has_party = yes
+				party = { is_party_type = liberal_party }
+			}
+		}
+		custom_tooltip = {
+			text = bpm_passed_the_last_grat_tithe_rentcharge_act
+			has_variable = bpm_last_tithe_acts_passed
+		}
+	}
+
+	effect = {
+		custom_tooltip = {
+			text = bpm_the_irish_will_become_a_party
+			remove_variable = bpm_lichfield_house_compact
+			scripted_effect_parties_emergence = yes
+		}
+		add_radicals = {
+			value = 0.1
+			culture = cu:irish
+		}
+		ig:ig_agrarian_populists ?= {
+			add_modifier = {
+				name = bpm_repealed_the_lichfield_house_compact_modifier
+				years = 10
+			}
+		}
+		ig:ig_radicals ?= {
+			add_modifier = {
+				name = bpm_repealed_the_lichfield_house_compact_modifier_radicals
+				years = 10
+			}
+		}
+	}
+}
+
+bpm_supress_the_radicals = {
+	name = "bpm_supress_the_radicals_name"
+	desc = "bpm_supress_the_radicals_desc"
+
+	visible = {
+    	exists = c:GBR
+		root = c:GBR
+		NOT = { has_variable = bpm_supressed_the_radicals_variable }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = bpm_derby_dilly_is_in_the_whig_party
+			ig:ig_conservatives ?= {
+				has_party = yes
+				party = { is_party_type = liberal_party }
+			}
+		}
+		custom_tooltip = {
+			text = je_bpm_has_repealed_the_compact
+			NOT = {
+				has_variable = bpm_lichfield_house_compact
+			}
+		}
+	}
+
+	effect = {
+		set_variable = bpm_supressed_the_radicals_variable
+		add_radicals = {
+			value = 0.02
+			strata = middle
+		}
+		ig:ig_radicals ?= {
+			add_modifier = {
+				name = bpm_supressed_interest_group
+				years = 5
+				is_decaying = yes
+			}
+		}
+
+		ig:ig_intelligentsia ?= {
+			add_modifier = {
+				name = bpm_supressed_interest_group
+				years = 5
+				is_decaying = yes
+			}
+		}
+
+		add_modifier = {
+			name = bpm_unstable_alliance_against_the_tories
+			years = 5
+			is_decaying = yes
+		}
+
+		custom_tooltip = {
+			text = radicals_might_abandon_you
+			random_list = {
+				20 = {}
+				30 = {
+					set_variable = bpm_radicals_discontent
+					#trigger_event = {
+					#	id = bpm_brtish_events.2
+					#	months = 1
+					#	popup = yes
+					#}
+				}
+			}
+		}
+	}
+}
+
+bpm_pass_the_tithe_rentcharge_act = {
+	name = "bpm_pass_the_tithe_rentcharge_act_name"
+	desc = "bpm_pass_the_tithe_rentcharge_act_desc"
+
+	visible = {
+    	exists = c:GBR
+		root = c:GBR
+		NOT = { has_variable = bpm_last_tithe_acts_passed }
+	}
+
+	possible = {
+		custom_tooltip = {
+			text = william_4_dead
+			ruler = {
+				NOT = { has_variable = is_billy }
+			}
+		}
+		has_law = law_type:law_repeatable_economy_agricultural_investment
+		hidden_trigger = {
+			always = no
+		}
+	}
+
+	effect = {
+		every_state = {
+			limit = {
+				has_modifier = bpm_tithe_war_ireland_modifier
+				owner = ROOT
+			}
+			remove_modifier = bpm_tithe_war_ireland_modifier
+			add_modifier = {
+				name = bpm_tithe_rentcharge_act_modifier
+				is_decaying = no
+			}
+		}
+	}
+}
+
+bpm_curb_the_orange_lodges = {
+	name = "bpm_curb_the_orange_lodges_name"
+	desc = "bpm_curb_the_orange_lodges_desc"
+
+	visible = {
+    	exists = c:GBR
+		root = c:GBR
+		NOT = { has_variable = bpm_curbed_the_orange_lodges }
+	}
+
+	possible = {
+		institution_investment_level = {
+			institution = institution_home_affairs
+			value >= 2
+		}
+		institution_investment_level = {
+			institution = institution_police
+			value >= 3
+		}
+		has_law = law_type:law_repeatable_religion_promote_secular_values
+		has_law = law_type:law_repeatable_politics_anti_corruption_drive
+		hidden_trigger = {
+			always = no
+		}
+	}
+
+	effect = {
+		
+	}
+}

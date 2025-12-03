@@ -372,6 +372,7 @@ liberal_party = {
 		leader = { # far right won't join liberal parties
 			OR = {
 				owner = { c:USA ?= THIS }
+				owner = { c:GBR ?= THIS }
 				NOR = {
 					bpm_leader_is_reactionary = yes
 					bpm_leader_is_fascist = yes
@@ -384,6 +385,7 @@ liberal_party = {
 		}
 		OR = {
 			owner = { c:USA ?= THIS }
+			owner = { c:GBR ?= THIS }
 			NOR = {
 				AND = {
 					bpm_ig_is_traditionalist = yes
@@ -395,6 +397,7 @@ liberal_party = {
 		}
 		OR = {
 			owner = { c:USA ?= THIS }
+			owner = { c:GBR ?= THIS }
 			NOT = { # unreformed conservatives should not join the liberals
 				bpm_ig_is_non_paternal_conservative = yes 
 			}
@@ -1253,12 +1256,26 @@ liberal_party = {
 			}
 		}
 
+		if = { # 
+			limit = {
+				owner = c:GBR
+				is_interest_group_type = ig_trade_unions
+				NOT = {
+					has_variable = bpm_peoples_charter_published
+				}
+			}
+			add = {	
+				value = -25
+				desc = "bpm_from_banned_from_politics"
+			}
+		}
+
 		# ===========================================================================
 		# Hardcoded party affiliation
 		# ===========================================================================
 		# Generic
 		if = {
-			limit = { NOT = { owner = c:USA } }
+			limit = { NOR = { owner = c:USA owner = c:GBR } }
 			if = {
 				limit = { leader = { has_variable = liberal_party_leader } }
 				add = {
@@ -1274,6 +1291,96 @@ liberal_party = {
 				}
 			}
 		}
+
+		else_if = {
+			limit = { owner = c:GBR }
+			# Aftermath of the Great Reform Act
+			if = {
+				limit = { owner = { has_variable = bpm_aftermath_of_the_great_reform_act } }
+				if = {
+					limit = { leader = { has_variable = liberal_party_leader } }
+					add = {
+						value = 100
+						desc = "bpm_historical_leader"
+					}
+				}
+				else_if = {
+					limit = { leader = { has_variable = anti_liberal_party_leader } }
+					add = {
+						value = -100
+						desc = "bpm_historical_leader"
+					}
+				}
+				if = {
+					limit = { 
+						OR = {
+							is_interest_group_type = ig_liberals
+							is_interest_group_type = ig_industrialists
+            				is_interest_group_type = ig_intelligentsia
+							is_interest_group_type = ig_petty_bourgeoisie
+							is_interest_group_type = ig_national_liberals
+						}
+					}
+					add = {
+						value = 50
+						desc = "bpm_great_reform_act"
+					}
+				}
+				else_if = { # Derby Dilly will stay Whig until they leave for the Conservatives
+					limit = {
+						is_interest_group_type = ig_conservatives
+						owner = { 
+							OR = {
+								has_variable = bpm_derby_dilly_left
+								NOT = {
+									has_variable = bpm_old_whigs_won_over
+								}
+								owner = {
+									has_variable = bpm_lichfield_house_compact
+								}
+							}
+						}
+					}
+					add = {
+						value = -50
+						desc = "bpm_great_reform_act"
+					}
+				}
+
+				else_if = { # Irish Repealers had an electoral-political alliance with the Whigs
+					limit = {
+						is_interest_group_type = ig_agrarian_populists
+						owner = {
+							has_variable = bpm_lichfield_house_compact
+							NOT = {
+								has_variable = bpm_oconnell_left_himself
+							}
+						}
+					}
+					add = {
+						value = 50
+						desc = "bpm_lichfield_house_compact"
+					}
+				}
+
+				else_if = { # Radicals might withdraw their support if they find the Whigs' policy evil
+					limit = {
+						is_interest_group_type = ig_radicals
+						owner = { 
+							has_variable = bpm_lichfield_house_compact
+							NOT = {
+								has_variable = bpm_whigs_ousted_from_office
+							}
+						}
+					}
+					add = {
+						value = 50
+						desc = "bpm_great_reform_act"
+					}
+				}
+			}
+		}
+
 		# USA
 		else_if = {
 			limit = { owner = c:USA }

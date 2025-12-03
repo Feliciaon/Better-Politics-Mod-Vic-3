@@ -4,6 +4,124 @@
 #
 #
 
+bpm_rename_british_debug_ig = {
+	if = {
+		limit = { ### Derby Dilly Faction
+			this = c:GBR 
+			always = yes
+		}
+		ig:ig_conservatives ?= { set_interest_group_name = ig_derby_dillies }
+	}
+	else_if = {
+		limit = { ### Old Whigs
+			this = c:GBR 
+			has_variable = bpm_old_whigs_won_over
+		}
+		ig:ig_conservatives ?= { set_interest_group_name = ig_conservative_whigs }
+	}
+	else_if = {
+		limit = { ### Tories
+			this = c:GBR 
+			has_variable = bpm_derby_dilly_left
+			NOT = {
+				has_variable = bpm_corn_laws_debate_active
+			}
+		}
+		ig:ig_conservatives ?= { set_interest_group_name = ig_tories }
+	}
+	else_if = {
+		limit = { ### Protectionists
+			this = c:GBR 
+			has_variable = bpm_derby_dilly_left
+			has_variable = bpm_corn_laws_debate_active
+		}
+		ig:ig_conservatives ?= { set_interest_group_name = ig_protectionists }
+	}
+	if = {
+		limit = { ### Whig Faction
+			this = c:GBR 
+			always = yes
+		}
+		ig:ig_liberals ?= { set_interest_group_name = ig_whigs }
+	}
+
+	if = {
+		limit = {
+			this = c:GBR
+			always = yes
+		}
+		ig:ig_radicals ?= { set_interest_group_name = ig_radicals_britain }
+	}
+
+	if = {
+		limit = {
+			this = c:GBR 
+			NOT = {
+				has_variable = bpm_liberal_party_created
+			}
+		}
+		ig:ig_market_liberals ?= { set_interest_group_name = ig_peelites }
+	}
+
+	else_if = {
+		limit = {
+			this = c:GBR 
+			has_variable = bpm_liberal_party_created
+		}
+		ig:ig_market_liberals ?= { set_interest_group_name = ig_gladstonian_liberals }
+	}
+
+	if = {
+		limit = {
+			this = c:GBR 
+			always = yes
+		}
+		ig:ig_reactionaries ?= { set_interest_group_name = ig_high_tories }
+	}
+
+	if = {
+		limit = {
+			this = c:GBR 
+			always = yes
+		}
+		ig:ig_rural_folk ?= { set_interest_group_name = ig_agriculturists }
+	}
+
+	if = {
+		limit = {
+			this = c:GBR 
+			NOT = {
+				has_variable = bpm_liberal_party_created
+			}
+		}
+		ig:ig_national_liberals ?= { set_interest_group_name = ig_liberals_palmerston }
+	}
+
+	else_if = {
+		limit = {
+			this = c:GBR 
+			has_variable = bpm_liberal_party_created
+		}
+		ig:ig_national_liberals ?= { set_interest_group_name = ig_palmerstonian_liberals }
+	}
+
+	if = {
+		limit = {
+			this = c:GBR 
+			always = yes
+		}
+		ig:ig_agrarian_populists ?= { set_interest_group_name = ig_irish_repealers }
+	}
+
+	if = {
+		limit = {
+			this = c:GBR 
+			always = yes
+		}
+		ig:ig_petty_bourgeoisie ?= { set_interest_group_name = ig_administrative_colonial_interests }
+	}
+}
+
 bpm_rename_christian_democrat_ig = {
 	if = {
 		limit = {
@@ -1665,5 +1783,6 @@ bpm_rename_igs = {
 		bpm_rename_marlib_ig = yes
 		bpm_rename_conservative_ig = yes
 		bpm_rename_reactionary_ig = yes	
+		bpm_rename_british_debug_ig = yes
 	}
 }
