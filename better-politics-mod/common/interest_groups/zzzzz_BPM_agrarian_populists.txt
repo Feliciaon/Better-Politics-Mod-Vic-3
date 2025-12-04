@@ -48,6 +48,18 @@
 
 		rule = {
 			trigger = {
+				c:GBR ?= this
+				any_primary_culture = { 
+					cu:british = this
+				}
+			}
+			cultures = {
+				irish
+			}
+		}
+
+		rule = {
+			trigger = {
 				c:CHI ?= this
 				any_primary_culture = { 
 					cu:manchu = this
@@ -217,6 +229,35 @@
 					is_pop_type = academics
 				}
 				value = 100
+			}
+		}
+
+		if = {
+			limit = {
+				owner = {
+					this = c:GBR
+				}
+			}
+			add = {
+				desc = "POP_NOT_IRISH"
+				if = {
+					limit = { 
+						NOT = {
+							has_pop_culture = irish
+						}
+					}
+					value = -1000
+				}
+			}
+
+			add = {
+				desc = "IRISH"
+				if = {
+					limit = { 
+						has_pop_culture = irish
+					}
+					value = 250
+				}
 			}
 		}
 

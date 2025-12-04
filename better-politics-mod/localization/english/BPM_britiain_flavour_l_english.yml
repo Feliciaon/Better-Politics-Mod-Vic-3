@@ -81,7 +81,7 @@
  bpm_je_party_unity_low_desc: "The party unity is #bold low#!."
  bpm_je_party_low_collapse_looming_desc: "#R The party unity is extremely low. Total collapse is looming.#!"
 
- ig_administrative_colonial_interests: "Administrative Interests" #
+ ig_administrative_colonial_interests: "Administrative Interests"
  ig_administrative_colonial_interests_desc: "$ig_petty_bourgeoisie_desc$"
  
  party_gbr_lichfield: "Lichfield House Compact"
