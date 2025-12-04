@@ -113,6 +113,11 @@
 		}
 
 		add_modifier = {
+			name = bpm_great_reform_act
+			is_decaying = no
+		}
+
+		add_modifier = {
 			name = bpm_factory_acts
 			is_decaying = no
 		}
