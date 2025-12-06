@@ -30,10 +30,6 @@ DIPLOMACY = {
 		}
 	}
 	c:RUS ?= {
-        create_diplomatic_pact = {
-            country = c:POL
-            type = personal_union
-        }
 		create_diplomatic_pact = {
 			country = c:FIN
 			type = personal_union

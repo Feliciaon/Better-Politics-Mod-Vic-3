@@ -1,0 +1,72 @@
+namespace = pre_january
+
+ poland_setup = { #Spawn the polaczki
+	type = country_event
+	placement = root
+
+	title =  poland_setup.t
+	desc =  poland_setup.d
+	flavor = poland_setup.f
+
+    duration = 3
+
+	dlc = dlc_bpm
+
+	event_image = {
+		video = "europenorthamerica_london_center"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	trigger = {
+		game_date = 1836.1.2
+	}
+
+	option = {
+		name = poland_setup.a
+		default_option = yes
+		hidden_effect = {
+            create_country = {
+                tag = POL
+                origin = c:RUS
+                state = s:STATE_GREATER_POLAND.region_state:RUS
+                state = s:STATE_LESSER_POLAND.region_state:RUS 
+                province = p:x009F60
+                province = p:x1AA8FB
+                province = p:x46B451
+                province = p:x4F022C
+                province = p:x802161
+                province = p:x809F60
+                province = p:xC17590
+                province = p:xDC58D0
+                province = p:xE165F5
+                province = p:xF8C8F6
+                province = p:x00E0A0
+                province = p:x4678E5
+                province = p:x577C69
+                province = p:xA916E3
+            }
+		}
+        c:POL = {
+            add_primary_culture = cu:russian
+            remove_primary_culture = cu:polish
+
+            set_state_religion = rel:orthodox
+
+            activate_law = law_type:law_freedom_of_conscience
+		    activate_law = law_type:law_appointed_bureaucrats
+		    activate_law = law_type:law_secret_police
+            activate_law = law_type:law_unitary
+            activate_law = law_type:law_laissez_faire
+            activate_law = law_type:law_private_schools
+        }
+        create_diplomatic_pact = {
+            country = c:POL
+            type = personal_union
+        }
+	}
+}
+
+
