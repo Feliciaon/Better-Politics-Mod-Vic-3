@@ -309,8 +309,6 @@
 			add_ideology = ideology_dop_aristocratic_democrat
 
 			bpm_reorder_ideologies = yes
-			
-			add_modifier = bpm_alone 	
 		}
 
 		ig:ig_reactionaries = {
@@ -337,8 +335,8 @@
 		}
 
 		ig:ig_intelligentsia = {
-			bpm_remove_all_eco_ideologies = yes
-			add_ideology = ideology_eco_laissez_faire
+			bpm_remove_all_dop_ideologies = yes
+			add_ideology = ideology_dop_british_liberal
 		}
 
 		every_state = {
