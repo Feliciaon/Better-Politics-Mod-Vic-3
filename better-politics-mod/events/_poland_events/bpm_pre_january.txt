@@ -21,7 +21,7 @@ namespace = pre_january
 	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
 
 	trigger = {
-		game_date = 1836.1.2
+        
 	}
 
 	option = {
