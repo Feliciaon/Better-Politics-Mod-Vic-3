@@ -1,12 +1,12 @@
 namespace = pre_january
 
- poland_setup = { #Spawn the polaczki
+ pre_january.1 = { #Spawn the polaczki
 	type = country_event
 	placement = root
 
-	title =  poland_setup.t
-	desc =  poland_setup.d
-	flavor = poland_setup.f
+	title =  pre_january.1.t
+	desc =  pre_january.1.d
+	flavor = pre_january.1.f
 
     duration = 3
 
@@ -25,7 +25,7 @@ namespace = pre_january
 	}
 
 	option = {
-		name = poland_setup.a
+		name = pre_january.1.a
 		default_option = yes
 		hidden_effect = {
             create_country = {
