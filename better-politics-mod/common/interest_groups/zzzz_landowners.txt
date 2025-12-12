@@ -1,4 +1,4 @@
-﻿ig_landowners = {
+REPLACE:ig_landowners = {
 	color = hsv{ 0.78 0.1 0.5 }
 	texture = "gfx/interface/icons/ig_icons/landowners.dds"
 	layer = "revolution_dynamic_landowners"
@@ -316,7 +316,20 @@
 			}
 		}
 
-		multiply = ig_attraction_to_interests_from_stability
+		multiply = ig_attraction_to_interests_from_stability	
+		if = {
+			limit = {
+				scope:interest_group = {
+					is_in_government = yes
+				}
+			}
+			multiply = {
+				desc = "IN_GOVERNMENT_ATTRACTION"
+				value = 1
+				add = scope:interest_group.modifier:interest_group_in_government_attraction_mult
+				min = 0
+			}
+		}
 
 	}
 	

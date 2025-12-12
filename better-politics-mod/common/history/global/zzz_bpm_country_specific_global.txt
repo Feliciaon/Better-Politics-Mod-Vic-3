@@ -586,6 +586,10 @@
 			add_ideology = ideology_wel_religious_welfare
 			add_ruling_interest_group = yes
 		}
+		ig:ig_landowners ?= { 
+			bpm_remove_all_eco_ideologies = yes
+			add_ideology = ideology_eco_traditional_agrarian
+		}
 	}
 
 	c:HAN = {
@@ -1018,6 +1022,18 @@
 		}
 		else = {
 			activate_law = law_type:law_traditional_ostracism
+		}
+	}
+
+	every_country = {
+		if = {
+			limit = { 
+				OR = {
+					has_law_or_variant = law_type:law_census_voting
+					has_law_or_variant = law_type:law_universal_suffrage
+				} 
+			}
+			set_variable = liberalism_1_done
 		}
 	}
 

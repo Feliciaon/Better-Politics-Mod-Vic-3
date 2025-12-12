@@ -231,7 +231,7 @@ bpm_auth_weekly_state_exhaustion_recovery = {
 	}
 	min = 0 # Recovery can not go below zero
 
-	multiply = bpm_total_state_capacity
+	multiply = bpm_state_capacity
 
 }
 
@@ -325,6 +325,20 @@ bpm_auth_weekly_state_exhaustion_increase = {
 		}
 	}
 
+	if = {
+		limit = {
+			has_journal_entry = je_bpm_crises_government_scandal
+		}
+		add = {
+			value = 2
+			multiply = {
+				value = bpm_total_state_capacity
+				divide = 500
+			}
+			desc = "BPM_EXHAUSTION_FROM_SCANDAL"
+		}
+	}
+
 	add = {
 		value = bpm_auth_state_exhaustion_increase_incomplete_mandate
 		multiply = {
@@ -384,7 +398,7 @@ bpm_auth_exhaustion_from_radicals = {
 	}
 	multiply = {
 		value = bpm_total_state_capacity
-		divide = 1000
+		divide = 500
 	}
 	min = 0
 }

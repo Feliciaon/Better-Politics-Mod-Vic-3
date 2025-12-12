@@ -1,4 +1,4 @@
-﻿ig_trade_unions = {
+REPLACE:ig_trade_unions = {
 	color = hsv{ 0.02 0.7 1 }
 	texture = "gfx/interface/icons/ig_icons/trade_unions.dds"
 	layer = "revolution_dynamic_trade_unions"
@@ -305,6 +305,19 @@
 				limit = { owner = { NOT = { has_technology_researched = egalitarianism } } }
 				value = 0.25
 			}		
+		}
+		if = {
+			limit = {
+				scope:interest_group = {
+					is_in_government = yes
+				}
+			}
+			multiply = {
+				desc = "IN_GOVERNMENT_ATTRACTION"
+				value = 1
+				add = scope:interest_group.modifier:interest_group_in_government_attraction_mult
+				min = 0
+			}
 		}
 	}
 	
