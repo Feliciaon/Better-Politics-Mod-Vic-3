@@ -120,6 +120,7 @@
 
 		activate_law = law_type:law_no_womens_rights # Women couldn't hold property until ~1839
 		activate_law = law_type:law_right_to_associate # de jure illegal till 1842 but de facto legal after the 1835 general strike
+		activate_law = law_type:law_universal_suffrage # 
 	}
 
 	c:TUR = {
@@ -258,6 +259,13 @@
 				set_ruling_party = yes
 			}				
 		}
+
+		active_law:lawgroup_distribution_of_power ?= { # Wealth Voting - Reform Act
+			add_amendment = {
+				type = amendment_tradition_of_free_elections
+				sponsor = PREV.ig:ig_intelligentsia
+			}
+		}
 		
 		activate_law = law_type:law_regulatory_bodies # Multiple Factory Acts introduced forms of regulatory bodies
 		activate_law = law_type:law_national_guard # The British used the Military (like the Yeomen Cavalry) to pacify strikes
@@ -379,9 +387,20 @@
 		}
 		if = {
 			limit = { exists = py:conservative_party }
-			py:conservative_party = {
-				set_ruling_party = yes
-			}				
+			every_interest_group = {
+				limit = {
+					is_member_of_party = owner.py:conservative_party
+					is_in_government = no
+				}
+				add_ruling_interest_group = yes
+			}
+			every_interest_group = {
+				limit = {
+					NOT = { is_member_of_party = owner.py:conservative_party }
+					is_in_government = yes
+				}
+				remove_ruling_interest_group = yes
+			}			
 		}
 		if = {
 			limit = {
@@ -403,10 +422,21 @@
 
 	c:BEL = {
 		if = {
-			limit = { exists = py:conservative_party }
-			py:conservative_party = {
-				set_ruling_party = yes
-			}				
+			limit = { exists = py:liberal_party }
+			every_interest_group = {
+				limit = {
+					is_member_of_party = owner.py:liberal_party
+					is_in_government = no
+				}
+				add_ruling_interest_group = yes
+			}
+			every_interest_group = {
+				limit = {
+					NOT = { is_member_of_party = owner.py:liberal_party }
+					is_in_government = yes
+				}
+				remove_ruling_interest_group = yes
+			}					
 		}
 		activate_law = law_type:law_combination_acts
 	}
@@ -476,6 +506,14 @@
 			add_ruling_interest_group = yes
 			bpm_remove_all_sta_ideologies = yes
 			add_ideology = ideology_sta_federated_state
+		}
+
+		active_law:lawgroup_distribution_of_power ?= { # Oligarchy
+			add_amendment = {
+				type = amendment_chamber_of_procurators
+				sponsor = PREV.ig:ig_petty_bourgeoisie
+				cooldown = 96 # Product of the 1834 Charter
+			}
 		}
 	}
 
