@@ -293,6 +293,8 @@
 		ig:ig_liberals = {
 			bpm_remove_all_dop_ideologies = yes
 			add_ideology = ideology_dop_aristocratic_democrat
+			bpm_remove_all_sta_ideologies = yes
+			add_ideology = ideology_sta_effective_state
 			bpm_remove_all_eco_ideologies = yes
 			add_ideology = ideology_eco_aristocratic_laissez_faire
 			bpm_remove_all_mil_ideologies = yes
