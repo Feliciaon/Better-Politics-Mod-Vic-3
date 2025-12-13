@@ -259,13 +259,6 @@
 				set_ruling_party = yes
 			}				
 		}
-
-		active_law:lawgroup_distribution_of_power ?= { # Wealth Voting - Reform Act
-			add_amendment = {
-				type = amendment_tradition_of_free_elections
-				sponsor = PREV.ig:ig_intelligentsia
-			}
-		}
 		
 		activate_law = law_type:law_regulatory_bodies # Multiple Factory Acts introduced forms of regulatory bodies
 		activate_law = law_type:law_national_guard # The British used the Military (like the Yeomen Cavalry) to pacify strikes
